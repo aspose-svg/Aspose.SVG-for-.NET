@@ -2,7 +2,7 @@
 
 [Aspose.SVG for .NET](https://products.aspose.com/svg/net) is an API to create, read, update and convert SVG files to several different file format. It facilitates .NET application developers to work with .svg files without the need of installing any other application on server or client machines. With Aspose.SVG for .NET, you purely focus on your business logic instead of going into the underlying details of the .svg file format. It lets you save time and effort by allowing you to write short and simple lines of code in your applications quickly and easily.
 
-This repository contains [Examples](Examples) project for [Aspose.SVG for .NET](https://products.aspose.com/pub/net) to help you learn and write your own applications.
+This repository contains [Examples](Examples) project for [Aspose.SVG for .NET](https://products.aspose.com/svg/net) to help you learn and write your own applications.
 
 <p align="center">
 
