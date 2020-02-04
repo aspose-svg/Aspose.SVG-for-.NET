@@ -6,7 +6,7 @@ This repository contains [Examples](Examples) project for [Aspose.SVG for .NET](
 
 <p align="center">
 
-  <a title="Download complete Aspose.SVG for .NET source code" href="https://github.com/aspose-svg/Aspose.PUB-for-.NET/archive/master.zip">
+  <a title="Download complete Aspose.SVG for .NET source code" href="https://github.com/aspose-svg/Aspose.SVG-for-.NET/archive/master.zip">
 	<img src="https://raw.github.com/AsposeExamples/java-examples-dashboard/master/images/downloadZip-Button-Large.png" />
   </a>
 </p>
