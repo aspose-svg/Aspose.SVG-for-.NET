@@ -15,7 +15,7 @@ namespace CSharp.WorkingWithSVGDocument
         public static void Run()
         {
             //ExStart: NodeIterator
-            string dataDir = RunExamples.GetDataDir_Data();
+            string dataDir = RunExamples.GetDataDir_SVG();
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
             {
