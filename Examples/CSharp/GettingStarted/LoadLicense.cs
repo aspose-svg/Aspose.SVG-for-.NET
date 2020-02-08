@@ -10,12 +10,7 @@ namespace CSharp.GettingStarted
 {
     public class LoadLicense
     {
-        public static void Run()
-        {
-            //LoadLicenseFromFile();
-
-            //LoadLicenseFromStream();
-        }
+        
 
         public static void LoadLicenseFromFile()
         {
@@ -23,24 +18,60 @@ namespace CSharp.GettingStarted
             // The path to the documents directory.
             string dataDir = RunExamples.GetDataDir_Data();
 
-            string fileName = dataDir + "Aspose.SVG.Lic";
+            string fileName = dataDir + "Aspose.SVG.lic.Lic";
 
-            License pubLicense = new License();
+            License svgLicense = new License();
 
-            pubLicense.SetLicense(fileName);
+            svgLicense.SetLicense(fileName);
             //ExEnd: LoadLicenseFromFile
         }
 
         public static void LoadLicenseFromStream()
         {
             //ExStart: LoadLicenseFromStream
+            string dataDir = RunExamples.GetDataDir_Data();
             // Initialize license object
-            License pubLicense = new License();
+            License svgLicense = new License();
             // Load license in FileStream
             FileStream myStream = new FileStream("Aspose.SVG.lic", FileMode.Open);
             // Set license
-            pubLicense.SetLicense(myStream);
+            svgLicense.SetLicense(myStream);
             //ExEnd: LoadLicenseFromStream
+        }
+
+
+        public static void ApplyLicenseUsingEmbeddedResource()
+        {
+            //ExStart: ApplyLicenseUsingEmbeddedResource
+            
+            License svgLicense = new License();
+
+            // Pass the name of the embedded license file
+            svgLicense.SetLicense("Aspose.SVG.lic");
+            //ExEnd: ApplyLicenseUsingEmbeddedResource
+        }
+
+        public static void ApplyMeteredLicense()
+        {
+            //ExStart: ApplyMeteredLicense
+
+            // Create an instance of CAD Metered class
+           Metered metered = new Metered();
+
+            // Access the setMeteredKey property and pass public and private keys as parameters
+            metered.SetMeteredKey("*****", "*****");
+
+            // Get metered data amount before calling API
+            decimal amountbefore = Metered.GetConsumptionQuantity();
+
+            // Display information
+            Console.WriteLine("Amount Consumed Before: " + amountbefore.ToString());
+            // Get metered data amount After calling API
+            decimal amountafter = Metered.GetConsumptionQuantity();
+
+            // Display information
+            Console.WriteLine("Amount Consumed After: " + amountafter.ToString());
+            //ExEnd: ApplyMeteredLicense
         }
     }
 }
