@@ -13,7 +13,7 @@ namespace CSharp.LoadSaveConvert
         public static void Run()
         {
             //ExStart: SaveSVGDocument
-            string dataDir = RunExamples.GetDataDir_Data();
+            string dataDir = RunExamples.GetDataDir_Save();
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
             {

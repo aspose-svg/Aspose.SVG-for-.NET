@@ -14,7 +14,7 @@ namespace CSharp.LoadSaveConvert
         public static void ConvertSVGToBMP()
         {
             //ExStart: ConvertSVGToBMP
-            string dataDir = RunExamples.GetDataDir_Data();
+            string dataDir = RunExamples.GetDataDir_Convert();
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
             {
@@ -29,7 +29,7 @@ namespace CSharp.LoadSaveConvert
         public static void ConvertSVGToGIF()
         {
             //ExStart: ConvertSVGToGIF
-            string dataDir = RunExamples.GetDataDir_Data();
+            string dataDir = RunExamples.GetDataDir_Convert();
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
             {
@@ -44,7 +44,7 @@ namespace CSharp.LoadSaveConvert
         public static void ConvertSVGToJPEG()
         {
             //ExStart: ConvertSVGToJPEG
-            string dataDir = RunExamples.GetDataDir_Data();
+            string dataDir = RunExamples.GetDataDir_Convert();
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
             {
@@ -59,7 +59,7 @@ namespace CSharp.LoadSaveConvert
         public static void ConvertSVGToPNG()
         {
             //ExStart: ConvertSVGToPNG
-            string dataDir = RunExamples.GetDataDir_Data();
+            string dataDir = RunExamples.GetDataDir_Convert();
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
             {
@@ -74,7 +74,7 @@ namespace CSharp.LoadSaveConvert
         public static void ConvertSVGToTIFF()
         {
             //ExStart: ConvertSVGToTIFF
-            string dataDir = RunExamples.GetDataDir_Data();
+            string dataDir = RunExamples.GetDataDir_Convert();
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
             {
