@@ -1,4 +1,5 @@
-﻿using CSharp.GettingStarted;
+using Aspose.Svg;
+using CSharp.GettingStarted;
 using CSharp.LoadSaveConvert;
 using CSharp.WorkingWithSVGDocument;
 using System;
@@ -20,6 +21,8 @@ namespace CSharp
             #region Getting Started
             //LoadLicense.LoadLicenseFromFile();
             //LoadLicense.LoadLicenseFromStream();
+            //LoadLicense.ApplyLicenseUsingEmbeddedResource();
+            //LoadLicense.ApplyMeteredLicense();
             #endregion
 
             #region LoadSaveConvert
@@ -53,6 +56,26 @@ namespace CSharp
             // Stop before exiting
             Console.WriteLine("\n\nProgram Finished. Press any key to exit....");
             Console.ReadKey();
+        }
+        
+        public static String GetDataDir_Convert()
+        {
+            return Path.GetFullPath(GetDataDir_Data() + "convert/");
+        }
+
+        public static String GetDataDir_Save()
+        {
+            return Path.GetFullPath(GetDataDir_Data() + "save/");
+        }
+
+        public static String GetDataDir_Open()
+        {
+            return Path.GetFullPath(GetDataDir_Data() + "open/");
+        }
+
+        public static String GetDataDir_SVG()
+        {
+            return Path.GetFullPath(GetDataDir_Data() + "svg/");
         }
 
         public static string GetDataDir_Data()
