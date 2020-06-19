@@ -17,24 +17,40 @@ Directory | Description
 [Demos](Demos)  | Aspose.SVG for .NET Live Demos Source Code
 [Examples](Examples)  | A collection of .NET examples that help you learn the product features
 
-## How to Run the Examples
-+ You can either clone the repository using your favorite GitHub client or download the ZIP file from here.
-+ Extract the contents of the ZIP file to any folder on your computer. All the examples are located in the Examples folder.
-+ There is a Visual Studio solution file, Aspose.SVG.Examples.CSharp.sln in the folder.
-+ You need to have Visual Studio 2013 or higher to open the solution file.
-+ Open the solution file in Visual Studio and build the project.
-+ On the first run, the dependencies will automatically be downloaded via NuGet. It may take some time.
-+ Data folder at the root folder of Examples contains input files used in code examples. It is mandatory that you download the Data folder along with the examples project.
-+ Open RunExamples.cs file, all the examples are called from here.
-+ Uncomment the examples you want to run from within the project.
+## SVG File Processing Features
 
-Please find more details for how to run the examples [here](https://docs.aspose.com/display/svgnet/How+to+Run+the+Examples).
+- [Create, read](https://docs.aspose.com/display/svgnet/Create+and+Read+SVG+Documents) and [write SVG](https://docs.aspose.com/display/svgnet/Save+SVG+Files) format files.
+- [Convert SVG](https://docs.aspose.com/display/svgnet/How+to+Convert+SVG+Files) to other [supported file formats](https://docs.aspose.com/display/svgnet/Supported+File+Formats).
+- DOM Tree manipulation as per official SVG specs.
+- Support for content navigation via [XPath Query](https://docs.aspose.com/display/svgnet/Traverse+SVG+DOM#TraverseSVGDOM-UsingXPathQuery), [CSS Selectors](https://docs.aspose.com/display/svgnet/Traverse+SVG+DOM#TraverseSVGDOM-UsingCSSSelector), Element and Document Traversal features.
+- Support for quality rendering.
 
-## Resources
+## Read Supported Formats
 
-+ **Website:** [www.aspose.com](https://www.aspose.com)
-+ **Product Home:** [Aspose.SVG for .NET](https://products.aspose.com/svg/net)
-+ **Download:** [Download Aspose.SVG for .NET](https://www.nuget.org/packages/Aspose.SVG)
-+ **Documentation:** [Aspose.SVG for .NET Documentation](https://docs.aspose.com/display/svgnet/Home)
-+ **Forum:** [Aspose.SVG for .NET Forum](https://forum.aspose.com/c/svg)
-+ **Blog:** [Aspose.SVG for .NET Blog](https://blog.aspose.com/category/svg/)
+SVG
+
+## Save SVG As
+
+**Fixed Layout:** PDF, XPS
+**Image:** TIFF, BMP, PNG, JPEG, GIF
+
+## Platform Independence
+
+Any operating system that can install Mono (.NET 4.0 Framework support) or use .NET core can use Aspose.SVG for .NET. This includes Windows, Linux, and MacOS.
+
+## Getting Started with Aspose.SVG for .NET
+
+Are you ready to give Aspose.SVG for .NET a try? Simply execute `Install-Package Aspose.SVG` from Package Manager Console in Visual Studio to fetch the NuGet package. If you already have Aspose.SVG for .NET and want to upgrade the version, please execute `Update-Package Aspose.SVG` to get the latest version.
+
+## Use C# to Convert SVG to PNG format
+
+```csharp
+string dataDir = RunExamples.GetDataDir_Data();
+using (var document = new SVGDocument(Path.Combine(dataDir, "sourcefile.svg"))){
+    using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Png), dataDir + "targetfile.png")){
+        document.RenderTo(device);
+    }
+}
+```
+
+[Product Page](https://products.aspose.com/svg/net) | [Docs](https://docs.aspose.com/display/svgnet/Home) | [API Reference](https://apireference.aspose.com/svg/net) | [Examples](https://github.com/aspose-svg/Aspose.SVG-for-.NET) | [Blog](https://blog.aspose.com/category/svg/) | [Free Support](https://forum.aspose.com/c/svg) |  [Temporary License](https://purchase.aspose.com/temporary-license)
