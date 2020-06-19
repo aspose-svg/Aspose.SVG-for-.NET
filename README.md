@@ -17,6 +17,10 @@ Directory | Description
 [Demos](Demos)  | Aspose.SVG for .NET Live Demos Source Code
 [Examples](Examples)  | A collection of .NET examples that help you learn the product features
 
+# Process & Manipulate SVG via .NET API
+
+This .NET on-premise API helps you [seamlessly integrate SVG file processing & manipulation](https://products.aspose.com/svg/net) functionality into your C#, VB.NET, ASP.NET & other .NET based apps.
+
 ## SVG File Processing Features
 
 - [Create, read](https://docs.aspose.com/display/svgnet/Create+and+Read+SVG+Documents) and [write SVG](https://docs.aspose.com/display/svgnet/Save+SVG+Files) format files.
