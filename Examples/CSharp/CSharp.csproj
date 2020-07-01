@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.SVG, Version=20.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.SVG.20.4.0\lib\net40\Aspose.SVG.dll</HintPath>
+    <Reference Include="Aspose.SVG, Version=20.6.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.SVG.20.6.0\lib\net40\Aspose.SVG.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,6 +50,7 @@
     <Compile Include="LoadSaveConvert\ConvertSVGFilesUsingRenderer.cs" />
     <Compile Include="LoadSaveConvert\ConvertSVGToPDF.cs" />
     <Compile Include="LoadSaveConvert\ConvertSVGToXPS.cs" />
+    <Compile Include="LoadSaveConvert\SupportForHtmlContentInSVG.cs" />
     <Compile Include="LoadSaveConvert\CreateSVGDocumentFromContent.cs" />
     <Compile Include="LoadSaveConvert\CreateEmptySVGDocument.cs" />
     <Compile Include="LoadSaveConvert\LoadSVGDocumentFromFile.cs" />

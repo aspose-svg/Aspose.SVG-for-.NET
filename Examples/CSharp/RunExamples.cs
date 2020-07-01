@@ -41,6 +41,7 @@ namespace CSharp
             //LoadSVGDocumentFromUrl.Run();
             //RenderingOptions.Run();
             //SaveSVGDocument.Run();
+            //SupportForHtmlContentInSVG.Run();
             #endregion
 
             #region WorkingWithSVGDocument
