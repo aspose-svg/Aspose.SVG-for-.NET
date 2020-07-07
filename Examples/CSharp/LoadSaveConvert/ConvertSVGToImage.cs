@@ -71,7 +71,7 @@ namespace CSharp.LoadSaveConvert
             //ExEnd: ConvertSVGToPNG
         }
 
-        public static void ConvertSVGToPNG_1()
+        public static void ConvertSVGToPNGFromFile()
         {
             //ExStart: ConvertSVGToPNG
             // Prepare an SVG code and save it to the file.
@@ -91,7 +91,7 @@ namespace CSharp.LoadSaveConvert
             //ExEnd: ConvertSVGToPNG
         }
 
-        public static void ConvertSVGToPNG_2()
+        public static void ConvertSVGToPNGFromString()
         {
             //ExStart: ConvertSVGToPNG
             // Prepare an SVG code and save it to the string.
