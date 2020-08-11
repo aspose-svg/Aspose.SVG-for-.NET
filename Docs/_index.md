@@ -16,7 +16,7 @@ Aspose.SVG for .NET API has been designed to provide a wide range of features f
 
 {{% /alert %}} 
 
-## **Aspose.SVG for .NET Resources**
+## **Aspose.SVG for .NET Resources** 
 
 Following are the links to some useful resources you may need to accomplish your tasks.
 
