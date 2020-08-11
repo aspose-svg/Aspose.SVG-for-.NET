@@ -19,6 +19,7 @@ In this release we have made the following improvements:
 - made some usability improvements, like, clarified the URL parsing exceptions and added new signatures to the Document creation methods. 
 
 # **Public API changes:**
+## **Added APIs:**
 We have added new signatures to the Document creation methods. Now you can specify a base URL using the Aspose.Svg.Url class.
 
 {{< highlight java >}}
@@ -121,9 +122,7 @@ namespace Aspose.Svg.Saving
     }
 }
 {{< /highlight >}}
-
-## **Added APIs:**
-No change 
+ 
 ## **Removed APIs:**
 No change
 
