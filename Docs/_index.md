@@ -6,7 +6,7 @@ url: /net/
 is_root: true
 ---
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 **![Aspose.SVG for .NET Product Logo](home_1)**
 
@@ -14,9 +14,9 @@ is_root: true
 
 Aspose.SVG for .NET API has been designed to provide a wide range of features for processing and rendering of SVG documents. It's Document Object Model (DOM) is fully compatible with the official SVG specifications, enabling you to have full control over SVG nodes and their properties. You can easily modify the document tree, add and remove nodes, change the node properties, apply filters and scripts as it is described in the official specifications. The API lets you convert your SVG document into PDF and popular image formats such as BMP, PNG, JPEG and GIF.
 
-{{% /alert %}} 
+{{% /alert %}}
 
-## **Aspose.SVG for .NET Resources** 
+## **Aspose.SVG for .NET Resources**
 
 Following are the links to some useful resources you may need to accomplish your tasks.
 
@@ -25,11 +25,7 @@ Following are the links to some useful resources you may need to accomplish your
 - [Aspose.SVG for .NET Release Notes](/svg/net/release-notes/)
 - [Aspose.SVG for .NET Product Page](https://products.aspose.com/svg/net)
 - [Install Aspose.SVG for .NET NuGet Package](https://www.nuget.org/packages/Aspose.SVG/)
-- [Aspose.SVG for .NET API Reference Guide](https://apireference.aspose.com/net/svg)
+- [Aspose.SVG for .NET API Reference Guide](https://apireference.aspose.com/svg/net)
 - [Download Examples at GitHub Repository](https://github.com/aspose-svg/Aspose.SVG-for-.NET)
-- [Aspose.SVG for .NET Free Support Forum](https://github.com/aspose-svg/Aspose.SVG-for-.NET)
+- [Aspose.SVG for .NET Free Support Forum](https://forum.aspose.com/c/svg)
 - [Aspose.SVG for .NET Paid Support Helpdesk](https://helpdesk.aspose.com/)
-
-
-
-
