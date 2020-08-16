@@ -1,6 +1,6 @@
-# Aspose.SVG for .NET
+# Process & Manipulate SVG via .NET API
 
-[Aspose.SVG for .NET](https://products.aspose.com/svg/net) is an API to create, read, update and convert SVG files to several different file format. It facilitates .NET application developers to work with .svg files without the need of installing any other application on server or client machines. With Aspose.SVG for .NET, you purely focus on your business logic instead of going into the underlying details of the .svg file format. It lets you save time and effort by allowing you to write short and simple lines of code in your applications quickly and easily.
+[Aspose.SVG for .NET](https://products.aspose.com/svg/net) is an API to create, read, update and convert SVG files to several different file format. It facilitates .NET application developers to work with SVG files without the need of installing any other application on server or client machines.
 
 <p align="center">
 
@@ -9,23 +9,19 @@
   </a>
 </p>
 
-This repository contains [Demos](Demos) and [Examples](Examples) project for [Aspose.SVG for .NET](https://products.aspose.com/svg/net) to help you learn and write your own applications.
 
 Directory | Description
 --------- | -----------
-[Demos](Demos)  | Aspose.SVG for .NET Live Demos Source Code
-[Examples](Examples)  | A collection of .NET examples that help you learn the product features
+[Demos](Demos)  | Source code for the live demos hosted at https://products.aspose.app/svg/family.
+[Examples](Examples)  | A collection of .NET examples that help you learn the product features.
 
-# Process & Manipulate SVG via .NET API
 
-This .NET on-premise API helps you [seamlessly integrate SVG file processing & manipulation](https://products.aspose.com/svg/net) functionality into your C#, VB.NET, ASP.NET & other .NET based apps.
+## SVG File Processing
 
-## SVG File Processing Features
-
-- [Create, read](https://docs.aspose.com/display/svgnet/Create+and+Read+SVG+Documents) and [write SVG](https://docs.aspose.com/display/svgnet/Save+SVG+Files) format files.
-- [Convert SVG](https://docs.aspose.com/display/svgnet/How+to+Convert+SVG+Files) to other [supported file formats](https://docs.aspose.com/display/svgnet/Supported+File+Formats).
+- [Create, read](https://docs.aspose.com/svg/net/create-and-read-svg-documents/) and [write SVG](https://docs.aspose.com/svg/net/save-svg-files/) files.
+- [Convert SVG](https://docs.aspose.com/svg/net/how-to-convert-svg-files/) to other [supported file formats](https://docs.aspose.com/svg/net/supported-file-formats/).
 - DOM Tree manipulation as per official SVG specs.
-- Support for content navigation via [XPath Query](https://docs.aspose.com/display/svgnet/Traverse+SVG+DOM#TraverseSVGDOM-UsingXPathQuery), [CSS Selectors](https://docs.aspose.com/display/svgnet/Traverse+SVG+DOM#TraverseSVGDOM-UsingCSSSelector), Element and Document Traversal features.
+- Support for content navigation via [XPath Query](https://docs.aspose.com/svg/net/traverse-svg-dom/#TraverseSVGDOM-UsingXPathQuery), [CSS Selectors](https://docs.aspose.com/svg/net/traverse-svg-dom/#TraverseSVGDOM-UsingCSSSelector), Element and Document Traversal features.
 - Support for quality rendering.
 
 ## Read Supported Formats
@@ -41,7 +37,7 @@ SVG
 
 Any operating system that can install Mono (.NET 4.0 Framework support) or use .NET core can use Aspose.SVG for .NET. This includes Windows, Linux, and MacOS.
 
-## Getting Started with Aspose.SVG for .NET
+## Get Started with Aspose.SVG for .NET
 
 Are you ready to give Aspose.SVG for .NET a try? Simply execute `Install-Package Aspose.SVG` from Package Manager Console in Visual Studio to fetch the NuGet package. If you already have Aspose.SVG for .NET and want to upgrade the version, please execute `Update-Package Aspose.SVG` to get the latest version.
 
@@ -49,11 +45,11 @@ Are you ready to give Aspose.SVG for .NET a try? Simply execute `Install-Package
 
 ```csharp
 string dataDir = RunExamples.GetDataDir_Data();
-using (var document = new SVGDocument(Path.Combine(dataDir, "sourcefile.svg"))){
-    using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Png), dataDir + "targetfile.png")){
+using (var document = new SVGDocument(Path.Combine(dataDir, "template.svg"))){
+    using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Png), dataDir + "output.png")){
         document.RenderTo(device);
     }
 }
 ```
 
-[Product Page](https://products.aspose.com/svg/net) | [Docs](https://docs.aspose.com/display/svgnet/Home) | [API Reference](https://apireference.aspose.com/svg/net) | [Examples](https://github.com/aspose-svg/Aspose.SVG-for-.NET) | [Blog](https://blog.aspose.com/category/svg/) | [Free Support](https://forum.aspose.com/c/svg) |  [Temporary License](https://purchase.aspose.com/temporary-license)
+[Home](https://www.aspose.com/) | [Product Page](https://products.aspose.com/svg/net) | [Docs](https://docs.aspose.com/svg/net/) | [API Reference](https://apireference.aspose.com/svg/net) | [Examples](https://github.com/aspose-svg/Aspose.SVG-for-.NET) | [Blog](https://blog.aspose.com/category/svg/) | [Free Support](https://forum.aspose.com/c/svg) |  [Temporary License](https://purchase.aspose.com/temporary-license)
