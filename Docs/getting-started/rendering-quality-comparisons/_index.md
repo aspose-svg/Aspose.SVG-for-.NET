@@ -33,3 +33,4 @@ Aspose.SVG supports all the brushes declared in the specification, while other l
 #### **Linear Gradient**
 
 ![todo:image_alt_text](rendering-quality-comparisons_3.png)
+
