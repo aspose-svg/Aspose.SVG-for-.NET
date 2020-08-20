@@ -21,7 +21,7 @@ Directory | Description
 - [Create, read](https://docs.aspose.com/svg/net/create-and-read-svg-documents/) and [write SVG](https://docs.aspose.com/svg/net/save-svg-files/) files.
 - [Convert SVG](https://docs.aspose.com/svg/net/how-to-convert-svg-files/) to other [supported file formats](https://docs.aspose.com/svg/net/supported-file-formats/).
 - DOM Tree manipulation as per official SVG specs.
-- Support for content navigation via [XPath Query](https://docs.aspose.com/svg/net/traverse-svg-dom/#TraverseSVGDOM-UsingXPathQuery), [CSS Selectors](https://docs.aspose.com/svg/net/traverse-svg-dom/#TraverseSVGDOM-UsingCSSSelector), Element and Document Traversal features.
+- Support for content navigation via [XPath Query](https://docs.aspose.com/svg/net/traverse-svg-dom/), CSS Selectors, Element and Document Traversal features.
 - Support for quality rendering.
 
 ## Read Supported Formats
