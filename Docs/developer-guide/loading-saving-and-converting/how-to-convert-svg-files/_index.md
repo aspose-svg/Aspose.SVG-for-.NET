@@ -26,13 +26,31 @@ Aspose.SVG for .NET API offers the capability to convert SVG images to JPEG form
 
 {{< gist "aspose-com-gists" "0420a5530f73658aebea7f98ea4d705f" "Examples-CSharp-LoadSaveConvert-ConvertSVGToImage-ConvertSVGToJPEG.cs" >}}
 ### **Convert SVG to PNG**
-[PNG](https://wiki.fileformat.com/image/png/) (Portable Network Formats) has been the image format of choice as a replacement of [GIF](https://wiki.fileformat.com/image/gif/) format with lossless compression. It doesn't support animations unlike GIF but has gained popularity due to its lossless compression among its users. It is supported by almost all operating systems such as Microsoft Windows and macOS.
+{{% alert color="primary" %}}
 
-` `Aspose.SVG for .NET API has the capability to read and convert SVG files to PNG file format using C# and other .NET programming languages. The following sample code can be used to achieve SVG to PNG conversion.
+https://products.aspose.app/svg/conversion/svg-to-png
 
+{{% /alert %}}
+[PNG](https://wiki.fileformat.com/image/png/) (Portable Network Formats) has been the image format of choice as a replacement of GIF format with lossless compression. It doesn't support animations unlike GIF but has gained popularity due to its lossless compression among its users. It is supported by almost all operating systems such as Microsoft Windows and macOS.
 
+Aspose.SVG for .NET API has the capability to read and convert SVG files to PNG file format using C# and other .NET programming languages. 
 
-{{< gist "aspose-com-gists" "0420a5530f73658aebea7f98ea4d705f" "Examples-CSharp-LoadSaveConvert-ConvertSVGToImage-ConvertSVGToPNG.cs" >}}
+# **How to convert SVG to PNG using the [ConvertSVG](https://apireference.aspose.com/svg/net/aspose.svg.converters.converter/convertsvg/methods/1) method of the [Converter](https://apireference.aspose.com/svg/net/aspose.svg.converters/converter) class.** 
+1. Initially we create a SVG sample and save it to a file.
+1. A new instance of the [SVGDocument](https://apireference.aspose.com/svg/net/aspose.svg/svgdocument) class is created from the SVG file.
+1. We specify PNG [ImageFormat](https://apireference.aspose.com/svg/net/aspose.svg.rendering.image/imageformat) using an instance of the [ImageSaveOptions](https://apireference.aspose.com/svg/net/aspose.svg.saving/imagesaveoptions) class.
+1. Then we call the Converter.ConvertSVG method, which converts SVG to PGN.
+
+{{< gist "aspose-com-gists" "0420a5530f73658aebea7f98ea4d705f" "Examples-CSharp-LoadSaveConvert-ConvertSVGToImage-ConvertSVGToPNGFromFile.cs" >}}
+
+# **How to convert SVG to PNG using rendering on [ImageDeivece](https://apireference.aspose.com/svg/net/aspose.svg.rendering.image/imagedevice).** 
+1. We create a SVG sample and save it to string variable.
+1. A new instance of the SVGDocument class is created from the string source.
+1. In the next step, we create an instance of the ImageDeivice class. The constructor of this device accepts [ImageRendering](https://apireference.aspose.com/svg/net/aspose.svg.rendering.image/imagerenderingoptions) options that determine the rendering process and the result file.
+1. The SVG document is rendered to the PGN output file.
+
+{{< gist "aspose-com-gists" "0420a5530f73658aebea7f98ea4d705f" "Examples-CSharp-LoadSaveConvert-ConvertSVGToImage-ConvertSVGToPNGFromString.cs" >}}
+
 ### **Convert SVG to BMP**
 Aspose.SVG for .NET (C#, VB.NET) lets you convert your SVG files to rasterized Bitmaps using a couple of lines of code. Bitmap files have been known for long as these were the initial image file formats and were widely used for graphical representation and storing images. With the passage of time, other image file formats have replaced [.bmp](https://wiki.fileformat.com/image/bmp/) files based on the file size and quality.
 
