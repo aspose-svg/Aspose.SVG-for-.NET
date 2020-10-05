@@ -17,6 +17,7 @@ namespace CSharp
         {
             Console.WriteLine("Open RunExamples.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("=====================================================");
+
             // Uncomment the one you want to try out
             #region Getting Started
             //LoadLicense.LoadLicenseFromFile();
@@ -42,6 +43,7 @@ namespace CSharp
             //RenderingOptions.Run();
             //SaveSVGDocument.Run();
             //SupportForHtmlContentInSVG.Run();
+            //VectorizeText.Run();
             #endregion
 
             #region WorkingWithSVGDocument
