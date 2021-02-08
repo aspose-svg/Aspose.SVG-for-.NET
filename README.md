@@ -1,3 +1,5 @@
+![Nuget](https://img.shields.io/nuget/v/Aspose.Svg) ![Nuget](https://img.shields.io/nuget/dt/Aspose.Svg) ![GitHub](https://img.shields.io/github/license/aspose-svg/Aspose.Svg-for-.NET)
+
 # Process & Manipulate SVG via .NET API
 
 [Aspose.SVG for .NET](https://products.aspose.com/svg/net) is an API to create, read, update and convert SVG files to several different file format. It facilitates .NET application developers to work with SVG files without the need of installing any other application on server or client machines.
