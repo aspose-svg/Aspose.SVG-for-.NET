@@ -15,7 +15,7 @@ namespace CSharp.LoadSaveConvert
             //ExStart: LoadDocumentFromFile
             string dataDir = RunExamples.GetDataDir_Open();
 
-            using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
+            using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
                 // do some actions over the document here... 
             }

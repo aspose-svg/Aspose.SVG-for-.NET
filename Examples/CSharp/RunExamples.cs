@@ -83,7 +83,7 @@ namespace CSharp
 
         public static string GetDataDir_Data()
         {
-            var parent = Directory.GetParent(Directory.GetCurrentDirectory()).Parent;
+            var parent = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent;
             string startDirectory = null;
             if (parent != null)
             {

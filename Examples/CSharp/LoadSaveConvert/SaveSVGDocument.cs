@@ -15,7 +15,7 @@ namespace CSharp.LoadSaveConvert
             //ExStart: SaveSVGDocument
             string dataDir = RunExamples.GetDataDir_Save();
 
-            using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
+            using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
                 const string @namespace = "http://www.w3.org/2000/svg";
                 var circle = (SVGCircleElement)document.CreateElementNS(@namespace, "circle");

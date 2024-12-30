@@ -15,16 +15,16 @@ namespace CSharp.WorkingWithSVGDocument
             //ExStart: TraverseSVGElement
             string dataDir = RunExamples.GetDataDir_SVG();
 
-            using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
+            using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
                 var element = document.DocumentElement;
                 Console.WriteLine(element.TagName); // SVG
 
-                element = element.LastElementChild;
-                Console.WriteLine(element.TagName); // G
+                element = element.FirstElementChild;
+                Console.WriteLine(element.TagName); // d:SVGTestCase
 
                 element = element.FirstElementChild;
-                Console.WriteLine(element.TagName); // RECT
+                Console.WriteLine(element.TagName); // d:testDescription
             }
             //ExEnd: TraverseSVGElement
         }
