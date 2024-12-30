@@ -15,7 +15,7 @@ namespace CSharp.WorkingWithSVGDocument
             //ExStart: EditSVGFile
             string dataDir = RunExamples.GetDataDir_SVG();
 
-            using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
+            using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
                 const string @namespace = "http://www.w3.org/2000/svg";
                 var circle = (SVGCircleElement)document.CreateElementNS(@namespace, "circle");

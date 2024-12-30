@@ -18,7 +18,7 @@ namespace CSharp.LoadSaveConvert
             //ExStart: RenderingOptions
             string dataDir = RunExamples.GetDataDir_Save();
 
-            using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
+            using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
                 var options = new XpsRenderingOptions()
                 {
@@ -26,7 +26,7 @@ namespace CSharp.LoadSaveConvert
                     {
                         AnyPage = new Page(new Aspose.Svg.Drawing.Size(500, 500), new Margin(50, 50, 50, 50))
                     },
-                    BackgroundColor = Color.Blue
+                    BackgroundColor = System.Drawing.Color.Blue
                 };
                 using (XpsDevice device = new XpsDevice(options, dataDir + "RenderingOptions_out.xps"))
                 {

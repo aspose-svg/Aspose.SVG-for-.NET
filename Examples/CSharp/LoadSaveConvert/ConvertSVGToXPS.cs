@@ -17,7 +17,7 @@ namespace CSharp.LoadSaveConvert
             //ExStart: ConvertSVGToXPS
             string dataDir = RunExamples.GetDataDir_Convert();
 
-            using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
+            using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
                 var options = new XpsRenderingOptions()
                 {
@@ -26,7 +26,7 @@ namespace CSharp.LoadSaveConvert
                         AnyPage = new Page(new Size(500, 500))
                     }
                 };
-                using (var device = new XpsDevice(options, dataDir + "smiley_out.xps"))
+                using (var device = new XpsDevice(options, dataDir + "paths_out.xps"))
                 {
                     document.RenderTo(device);
                 }

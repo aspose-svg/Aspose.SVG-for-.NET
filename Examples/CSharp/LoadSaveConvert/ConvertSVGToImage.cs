@@ -16,9 +16,9 @@ namespace CSharp.LoadSaveConvert
             //ExStart: ConvertSVGToBMP
             string dataDir = RunExamples.GetDataDir_Convert();
 
-            using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
+            using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
-                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Bmp), dataDir + "smiley_out.bmp"))
+                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Bmp), dataDir + "paths_out.bmp"))
                 {
                     document.RenderTo(device);
                 }
@@ -31,9 +31,9 @@ namespace CSharp.LoadSaveConvert
             //ExStart: ConvertSVGToGIF
             string dataDir = RunExamples.GetDataDir_Convert();
 
-            using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
+            using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
-                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Gif), dataDir + "smiley_out.gif"))
+                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Gif), dataDir + "paths_out.gif"))
                 {
                     document.RenderTo(device);
                 }
@@ -46,9 +46,9 @@ namespace CSharp.LoadSaveConvert
             //ExStart: ConvertSVGToJPEG
             string dataDir = RunExamples.GetDataDir_Convert();
 
-            using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
+            using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
-                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Jpeg), dataDir + "smiley_out.jpg"))
+                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Jpeg), dataDir + "paths_out.jpg"))
                 {
                     document.RenderTo(device);
                 }
@@ -61,9 +61,9 @@ namespace CSharp.LoadSaveConvert
             //ExStart: ConvertSVGToPNG
             string dataDir = RunExamples.GetDataDir_Convert();
 
-            using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
+            using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
-                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Png), dataDir + "smiley_out.png"))
+                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Png), dataDir + "paths_out.png"))
                 {
                     document.RenderTo(device);
                 }
@@ -115,9 +115,9 @@ namespace CSharp.LoadSaveConvert
             //ExStart: ConvertSVGToTIFF
             string dataDir = RunExamples.GetDataDir_Convert();
 
-            using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
+            using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
-                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Tiff), dataDir + "smiley_out.tiff"))
+                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Tiff), dataDir + "paths_out.tiff"))
                 {
                     document.RenderTo(device);
                 }

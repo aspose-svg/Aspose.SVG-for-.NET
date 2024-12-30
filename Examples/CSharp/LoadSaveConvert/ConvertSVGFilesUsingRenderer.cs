@@ -17,7 +17,7 @@ namespace CSharp.LoadSaveConvert
             //ExStart: ConvertSVGFilesUsingRenderer
             string dataDir = RunExamples.GetDataDir_Convert();
 
-            using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
+            using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
                 using (SvgRenderer renderer = new SvgRenderer())
                 using (XpsDevice device = new XpsDevice(dataDir + "ConvertSVGFilesUsingRenderer_out.xps"))

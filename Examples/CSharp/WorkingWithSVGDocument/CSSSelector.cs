@@ -15,7 +15,7 @@ namespace CSharp.WorkingWithSVGDocument
             //ExStart: CSSSelector
             string dataDir = RunExamples.GetDataDir_SVG();
 
-            using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
+            using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
                 var element = document.QuerySelector("g > :last-child");
                 Console.WriteLine(element.OuterHTML);

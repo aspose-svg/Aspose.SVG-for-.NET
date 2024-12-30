@@ -15,14 +15,14 @@ namespace CSharp.WorkingWithSVGDocument
             //ExStart: InspectDocumentContent
             string dataDir = RunExamples.GetDataDir_SVG();
 
-            using (var document = new SVGDocument(Path.Combine(dataDir, "smiley.svg")))
+            using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
                 var svg = document.DocumentElement;
-                var g = svg.GetElementsByTagName("g").First() as SVGGElement;
-                var rect = g.FirstElementChild as SVGRectElement;
+                var circle = svg.GetElementsByTagName("circle").First() as SVGCircleElement;
 
-                Console.WriteLine(rect.Width); // 90%
-                Console.WriteLine(rect.Height); // 90%
+                Console.WriteLine(circle.Cx); // 204
+                Console.WriteLine(circle.Cy); // 209
+                Console.WriteLine(circle.R); // 3
             }
             //ExEnd: InspectDocumentContent
         }
