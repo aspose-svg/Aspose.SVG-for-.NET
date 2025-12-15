@@ -1,12 +1,7 @@
 ﻿using Aspose.Svg;
 using Aspose.Svg.Drawing;
 using Aspose.Svg.Rendering.Pdf;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharp.LoadSaveConvert
 {
@@ -16,6 +11,7 @@ namespace CSharp.LoadSaveConvert
         {
             //ExStart: ConvertSVGToPDF
             string dataDir = RunExamples.GetDataDir_Convert();
+            string outputDir = RunExamples.GetDataDir_OutputConvert();
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
@@ -26,7 +22,7 @@ namespace CSharp.LoadSaveConvert
                         AnyPage = new Page(new Size(500, 500))
                     }
                 };
-                using (var device = new PdfDevice(options, dataDir + "paths_out.pdf"))
+                using (var device = new PdfDevice(options, outputDir + "paths_out.pdf"))
                 {
                     document.RenderTo(device);
                 }

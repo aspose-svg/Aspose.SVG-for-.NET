@@ -1,9 +1,4 @@
----
-title: How to Run the Examples
-type: docs
-weight: 80
-url: /net/how-to-run-the-examples/
----
+# How to Run the Examples
 
 ## **Software Requirements**
 

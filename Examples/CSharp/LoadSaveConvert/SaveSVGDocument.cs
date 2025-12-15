@@ -1,10 +1,6 @@
 ﻿using Aspose.Svg;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CSharp.LoadSaveConvert
 {
@@ -13,7 +9,10 @@ namespace CSharp.LoadSaveConvert
         public static void Run()
         {
             //ExStart: SaveSVGDocument
-            string dataDir = RunExamples.GetDataDir_Save();
+            // Input files for save examples are located in Examples/Data/save/
+            string dataDir = Path.Combine(RunExamples.GetDataDir_Data(), "save\\");
+            // Output files for save examples are stored in Examples/output/save/
+            string outputDir = RunExamples.GetDataDir_Save();
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
@@ -26,7 +25,7 @@ namespace CSharp.LoadSaveConvert
                 var g = document.QuerySelector("g");
                 g.InsertBefore(circle, g.FirstChild);
 
-                document.Save(dataDir + "SaveSVGDocument_out.svg");
+                document.Save(outputDir + "SaveSVGDocument_out.svg");
             }
             //ExEnd: SaveSVGDocument
         }

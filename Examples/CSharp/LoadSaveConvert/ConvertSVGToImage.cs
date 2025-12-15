@@ -1,11 +1,6 @@
 ﻿using Aspose.Svg;
 using Aspose.Svg.Rendering.Image;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharp.LoadSaveConvert
 {
@@ -15,10 +10,11 @@ namespace CSharp.LoadSaveConvert
         {
             //ExStart: ConvertSVGToBMP
             string dataDir = RunExamples.GetDataDir_Convert();
+            string outputDir = RunExamples.GetDataDir_OutputConvert();
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
-                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Bmp), dataDir + "paths_out.bmp"))
+                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Bmp), outputDir + "paths_out.bmp"))
                 {
                     document.RenderTo(device);
                 }
@@ -30,10 +26,11 @@ namespace CSharp.LoadSaveConvert
         {
             //ExStart: ConvertSVGToGIF
             string dataDir = RunExamples.GetDataDir_Convert();
+            string outputDir = RunExamples.GetDataDir_OutputConvert();
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
-                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Gif), dataDir + "paths_out.gif"))
+                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Gif), outputDir + "paths_out.gif"))
                 {
                     document.RenderTo(device);
                 }
@@ -45,10 +42,11 @@ namespace CSharp.LoadSaveConvert
         {
             //ExStart: ConvertSVGToJPEG
             string dataDir = RunExamples.GetDataDir_Convert();
+            string outputDir = RunExamples.GetDataDir_OutputConvert();
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
-                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Jpeg), dataDir + "paths_out.jpg"))
+                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Jpeg), outputDir + "paths_out.jpg"))
                 {
                     document.RenderTo(device);
                 }
@@ -60,10 +58,11 @@ namespace CSharp.LoadSaveConvert
         {
             //ExStart: ConvertSVGToPNG
             string dataDir = RunExamples.GetDataDir_Convert();
+            string outputDir = RunExamples.GetDataDir_OutputConvert();
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
-                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Png), dataDir + "paths_out.png"))
+                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Png), outputDir + "paths_out.png"))
                 {
                     document.RenderTo(device);
                 }
@@ -74,17 +73,17 @@ namespace CSharp.LoadSaveConvert
         public static void ConvertSVGToPNGFromFile()
         {
             //ExStart: ConvertSVGToPNG
-            // Prepare an SVG code and save it to the file.
+            // Prepare an SVG code and save it to the file
             var code = "<svg xmlns='http://www.w3.org/2000/svg'>" +
                        "<circle cx='50' cy='50' r='40' stroke='black' stroke-width='2' fill='red' />" +
                        "<circle cx='80' cy='80' r='30' stroke='black' stroke-width='1' fill='green' />" +
                        "</svg>";
-            System.IO.File.WriteAllText("example.svg", code);
+            File.WriteAllText("example.svg", code);
 
-            // Initialize an SVG document from the file.
-            using (var document = new Aspose.Svg.SVGDocument("example.svg"))
+            // Initialize an SVG document from the file
+            using (var document = new SVGDocument("example.svg"))
             {
-                var saveOptions = new Aspose.Svg.Saving.ImageSaveOptions(Aspose.Svg.Rendering.Image.ImageFormat.Png);
+                var saveOptions = new Aspose.Svg.Saving.ImageSaveOptions(ImageFormat.Png);
                 // Convert SVG to PNG
                 Aspose.Svg.Converters.Converter.ConvertSVG(document, saveOptions, "output.png");
             }
@@ -94,14 +93,14 @@ namespace CSharp.LoadSaveConvert
         public static void ConvertSVGToPNGFromString()
         {
             //ExStart: ConvertSVGToPNG
-            // Prepare an SVG code and save it to the string.
+            // Prepare an SVG code and save it to the string
             var code = "<svg xmlns='http://www.w3.org/2000/svg'>" +
                        "<rect width='300' height='100' style='fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)'/>" +
                        "</svg>";
-            // Initialize an SVG document from the string.
-            using (var document = new Aspose.Svg.SVGDocument(code, ""))
+            // Initialize an SVG document from the string
+            using (var document = new SVGDocument(code, ""))
             {
-                using (var device = new Aspose.Svg.Rendering.Image.ImageDevice(new Aspose.Svg.Rendering.Image.ImageRenderingOptions(Aspose.Svg.Rendering.Image.ImageFormat.Png), "output.png"))
+                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Png), "output.png"))
                 {
                     //render SVG to PNG
                     document.RenderTo(device);
@@ -114,10 +113,11 @@ namespace CSharp.LoadSaveConvert
         {
             //ExStart: ConvertSVGToTIFF
             string dataDir = RunExamples.GetDataDir_Convert();
+            string outputDir = RunExamples.GetDataDir_OutputConvert();
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
-                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Tiff), dataDir + "paths_out.tiff"))
+                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Tiff), outputDir + "paths_out.tiff"))
                 {
                     document.RenderTo(device);
                 }

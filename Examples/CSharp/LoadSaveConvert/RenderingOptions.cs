@@ -1,13 +1,7 @@
 ﻿using Aspose.Svg;
 using Aspose.Svg.Drawing;
 using Aspose.Svg.Rendering.Xps;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharp.LoadSaveConvert
 {
@@ -16,7 +10,10 @@ namespace CSharp.LoadSaveConvert
         public static void Run()
         {
             //ExStart: RenderingOptions
-            string dataDir = RunExamples.GetDataDir_Save();
+            // Input files for save examples are located in Examples/Data/save/
+            string dataDir = Path.Combine(RunExamples.GetDataDir_Data(), "save\\");
+            // Output files for save examples are stored in Examples/output/save/
+            string outputDir = RunExamples.GetDataDir_Save();
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
@@ -24,11 +21,11 @@ namespace CSharp.LoadSaveConvert
                 {
                     PageSetup =
                     {
-                        AnyPage = new Page(new Aspose.Svg.Drawing.Size(500, 500), new Margin(50, 50, 50, 50))
+                        AnyPage = new Page(new Size(500, 500), new Margin(50, 50, 50, 50))
                     },
                     BackgroundColor = System.Drawing.Color.Blue
                 };
-                using (XpsDevice device = new XpsDevice(options, dataDir + "RenderingOptions_out.xps"))
+                using (XpsDevice device = new XpsDevice(options, outputDir + "RenderingOptions_out.xps"))
                 {
                     document.RenderTo(device);
                 }
