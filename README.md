@@ -1,3 +1,5 @@
+[Home](https://metrics.aspose.com/) | [Product Page](https://products.aspose.com/svg/net/) | [Docs](https://docs.aspose.com/svg/net/) | [API Reference](https://apireference.aspose.com/svg/net/) | [NuGet](https://www.nuget.org/packages/Aspose.svg) | [Blog](https://blog.aspose.com/categories/aspose.svg-product-family/) | [Search](https://search.aspose.com/) | [Free Support](https://forum.aspose.com/c/svg/42) | [Temporary License](https://purchase.aspose.com/temporary-license)
+
 ![Nuget](https://img.shields.io/nuget/v/Aspose.Svg) ![Nuget](https://img.shields.io/nuget/dt/Aspose.Svg) ![GitHub](https://img.shields.io/github/license/aspose-svg/Aspose.Svg-for-.NET)
 
 # Process & Manipulate SVG via .NET API
@@ -61,4 +63,4 @@ using (var document = new SVGDocument(Path.Combine(dataDir, "template.svg"))){
 }
 ```
 
-[Home](https://www.aspose.com/) | [Product Page](https://products.aspose.com/svg/net) | [Docs](https://docs.aspose.com/svg/net/) | [API Reference](https://apireference.aspose.com/svg/net) | [Examples](https://github.com/aspose-svg/Aspose.SVG-for-.NET) | [Blog](https://blog.aspose.com/category/svg/) | [Search](https://search.aspose.com/) | [Free Support](https://forum.aspose.com/c/svg) |  [Temporary License](https://purchase.aspose.com/temporary-license)
+[Home](https://metrics.aspose.com/) | [Product Page](https://products.aspose.com/svg/net/) | [Docs](https://docs.aspose.com/svg/net/) | [API Reference](https://apireference.aspose.com/svg/net/) | [NuGet](https://www.nuget.org/packages/Aspose.svg) | [Blog](https://blog.aspose.com/categories/aspose.svg-product-family/) | [Search](https://search.aspose.com/) | [Free Support](https://forum.aspose.com/c/svg/42) | [Temporary License](https://purchase.aspose.com/temporary-license)
