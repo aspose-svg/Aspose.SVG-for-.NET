@@ -1,65 +1,85 @@
----
-title: Traverse SVG DOM
-type: docs
-weight: 20
-url: /net/traverse-svg-dom/
----
+# Traverse and Inspect SVG DOM in .NET
 
-Aspose.SVG for .NET API is fully compatible with official SVG specifications and you can use the API to traverse the SVG Document Object Model (DOM) using it. The API supports a wide range of navigation functionality and inspection of the SVG contents. 
-## **View SVG Content**
-The easiest way to inspect the document content is just to look at content as a string. The methods 'InnerHTML' and 'OuterHTML' is developed exactly for this purpose:
+Aspose.SVG for .NET allows developers to navigate and inspect the **SVG Document Object Model (DOM)** programmatically. This is essential for querying, modifying, or analyzing SVG elements in .NET applications.
 
-{{< gist "aspose-com-gists" "0420a5530f73658aebea7f98ea4d705f" "Examples-CSharp-WorkingWithSVGDocument-ViewDocumentContentAsString-ViewDocumentContentAsString.cs" >}}
-## **Traverse Document and Elements of SVG**
-Aspose.SVG contains a list of methods that are based on the Element & Document Traversal Specifications. You can perform a detailed inspection of the document and its elements using the API. The following code samples show the generalized usage of Element Traversal features.
+##  View SVG Content
 
-{{< gist "aspose-com-gists" "0420a5530f73658aebea7f98ea4d705f" "Examples-CSharp-WorkingWithSVGDocument-TraverseSVGElement-TraverseSVGElement.cs" >}}
-### **Extract Information about Specific Element**
-The following example shows how to extract information about a particular element from the SVG file.
+The easiest way to inspect the document content is to look at content as a string. The properties `InnerHTML` and `OuterHTML` of the Element class return a fragment of XML (or HTML) that represents the element and its contents. They are developed precisely for viewing SVG content as a string. The following code example shows how to view the content of document.svg file in the console.
 
-{{< gist "aspose-com-gists" "0420a5530f73658aebea7f98ea4d705f" "Examples-CSharp-WorkingWithSVGDocument-InspectDocumentContent-InspectDocumentContent.cs" >}}
-### **Iterating Over Document Elements using Custom Filters**
-You can also define custom filters and use them for iterating over the document elements as shown in the following code sample.
+```c#
+using Aspose.Svg;
+using System.IO;
 
-{{< gist "aspose-com-gists" "0420a5530f73658aebea7f98ea4d705f" "Examples-CSharp-WorkingWithSVGDocument-NodeIterator-NodeIterator.cs" >}}
+// Get SVG document OuterHTML in C#
 
-where the RectFilter class is defined as follow:
-
-
-
-{{< highlight java >}}
-
- class RectFilter : NodeFilter
-
+// Load an SVG document
+using (SVGDocument document = new SVGDocument(Path.Combine(DataDir, "document.svg")))
 {
+    // Use the OuterHTML property
+    string html = document.DocumentElement.OuterHTML;
 
-    public override short AcceptNode(Node n)
-
-    {
-
-        return string.Equals("rect", n.NodeName)
-
-            ? FILTER_ACCEPT
-
-            : FILTER_REJECT;
-
-    }
-
+    Console.WriteLine(html);
 }
+// View the document content
+```
 
-{{< /highlight >}}
-### **Using XPath Query**
-Aspose.SVG also has powerful XPath Specifications implementation along with Traversal Specifications. This empowers you to use XPath Query to navigate over the document as shown in the following code sample.
+## Extract Information about Specific SVG Element
 
+The following example shows how to extract information about a particular SVG element from a file shapes.svg:
 
+```c#
+using Aspose.Svg;
+using System.IO;
+using System.Linq;
 
-{{< gist "aspose-com-gists" "0420a5530f73658aebea7f98ea4d705f" "Examples-CSharp-WorkingWithSVGDocument-XPathQuery-XPathQuery.cs" >}}
-### **Using CSS Selector**
-Aspose.SVG for .NET also implements CSS Selector specification that allows you to navigate over the document by using CSS like style. The following code sample demonstrates this feature.
+// Extract information about specific SVG element
 
-{{< gist "aspose-com-gists" "0420a5530f73658aebea7f98ea4d705f" "Examples-CSharp-WorkingWithSVGDocument-CSSSelector-CSSSelector.cs" >}}
+string documentPath = Path.Combine(DataDir, "shapes.svg");
 
+// Load a document from a file
+using (SVGDocument document = new SVGDocument(documentPath))
+{
+    // Get the root <svg> element of the document
+    Element svg = document.DocumentElement;
 
+    // Find the first child element with a given tag name
+    SVGGElement g = svg.GetElementsByTagName("g").First() as SVGGElement;
+    SVGRectElement rect = g.FirstElementChild as SVGRectElement;
 
+    Console.WriteLine("Height: {0}", rect.Height);// 100
+    Console.WriteLine("Width: {0}", rect.Width); // 100
+}
+```
 
+## Navigate SVG with XPath Query
 
+XPath Query ( XML Path Language), often referred to simply as an XPath, is a query language used to query data from documents. It is based on a DOM representation of the SVG document and selects nodes by various criteria. The syntax of the XPath expressions is quite simple, and what is more important, it is easy to read and support.
+
+Aspose.SVG also has powerful XPath Specifications implementation along with Traversal Specifications. This empowers you to use XPath Query to navigate over the document as shown in the following code sample:
+
+```c#
+using Aspose.Svg;
+using System.IO;
+using Aspose.Svg.Dom;
+using Aspose.Svg.Collections;
+
+using (var document = new SVGDocument(Path.Combine(DataDir, "shapes.svg")))
+{
+    // Evaluate XPath expression
+    var xpathResult = document.Evaluate("//rect[@x='120']", document, null, (Dom.XPath.XPathResultType)XPathResultType.Any, null);
+
+    // Get the next evaluated node
+    Console.WriteLine((xpathResult.IterateNext() as Element)?.OuterHTML);
+}
+```
+
+## See Also
+
+- [**Official Documentation**](https://docs.aspose.com/svg/net/navigation-inspection/)
+Detailed guides and advanced scenarios for working with SVG documents in .NET.
+- [**API Reference**](https://reference.aspose.com/svg/net/)
+Explore the full API interface, classes, methods, and configuration options in the official reference.
+- [**Online SVG Converter**](https://products.aspose.app/svg/applications)
+Try SVG conversion online without writing code using the Aspose web application.
+- [**GitHub Repository Examples**](https://github.com/aspose-svg/Aspose.SVG-for-.NET/tree/master/Examples)
+This repository contains ready-to-use code examples and sample data files that demonstrate SVG conversion, rendering, and manipulation with Aspose.SVG for .NET. Use these examples as a starting point or reference when integrating SVG processing into your own applications.

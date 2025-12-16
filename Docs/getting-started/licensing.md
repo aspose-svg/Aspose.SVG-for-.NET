@@ -15,7 +15,7 @@ If you want to try Aspose.SVG without evaluation limitations, request a 30 day t
 
 ## Apply License using File or Stream Object
 
-The license can be loaded from a [file](https://docs.aspose.com/svg/net/licensing/#loading-a-license-from-file) or [stream object](https://docs.aspose.com/svg/net/licensing/#loading-a-license-from-a-stream-object).
+The license can be loaded from a [file or stream object](https://docs.aspose.com/svg/net/licensing/).
 
 The easiest way to apply a license is to put the license file in the same folder as the Aspose.SVG.dll file and specify just the file name without a path.
 

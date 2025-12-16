@@ -1,4 +1,4 @@
-# Release Notes - Aspose.SVG for .NET
+# Release Notes – Aspose.SVG for .NET
 
 This document provides an overview of the [Aspose.SVG for .NET Release Notes](https://releases.aspose.com/svg/net/release-notes/) and explains how to use them effectively when working with the library. The release notes describe the evolution of the API over time, including new features, performance improvements, bug fixes, and changes that may impact existing applications.
 
