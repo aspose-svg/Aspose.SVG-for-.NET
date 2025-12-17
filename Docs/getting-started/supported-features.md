@@ -1,6 +1,6 @@
 # Supported Features
 
-[Aspose.SVG for .NET](https://products.aspose.com/svg/net/) is a powerful API for creating, editing, converting, and rendering SVG documents in .NET applications. It allows developers to programmatically generate SVG, manipulate the DOM, apply transforms, and convert SVG to formats such as PDF, PNG, JPG, TIFF, XPS, and SVGZ. The library supports advanced features, including vectorization, gradients, filters, path building, and SVG optimization, making it ideal for automating SVG workflows and high-quality graphics processing.
+[**Aspose.SVG for .NET**](https://products.aspose.com/svg/net/) is a powerful API for creating, editing, converting, and rendering SVG documents in .NET applications. It allows developers to programmatically generate SVG, manipulate the DOM, apply transforms, and convert SVG to formats such as PDF, PNG, JPG, TIFF, XPS, and SVGZ. The library supports advanced features, including vectorization, gradients, filters, path building, and SVG optimization, making it ideal for automating SVG workflows and high-quality graphics processing.
 
 ## Key Features
 

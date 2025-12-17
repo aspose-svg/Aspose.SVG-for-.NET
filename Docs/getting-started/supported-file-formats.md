@@ -1,6 +1,6 @@
 # Supported File Formats
 
-The following table indicates the file formats that Aspose.SVG for .NET can load and Save.
+The following table indicates the file formats that Aspose.SVG for .NET can load and save.
 
 | Format  | Description                          | Load | Save |
 |---------|--------------------------------------|------|------|

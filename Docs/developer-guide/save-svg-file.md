@@ -12,6 +12,7 @@ using Aspose.Svg;
 using (var document = new SVGDocument("input.svg"))
 {
     // Perform edits or build SVG
+
     document.Save("output.svg");
 }
 ```

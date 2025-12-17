@@ -36,7 +36,7 @@ This method enables immediate parsing and manipulation of SVG content without in
 
 ## Create Custom SVG Using Builder API
 
-Aspose.SVG provides a fluent **Builder API** for constructing SVG elements programmatically. This allows precise control over shapes, paths, and attributes.
+Aspose.SVG provides a fluent [**Builder API**](https://docs.aspose.com/svg/net/svg-builder/) for constructing SVG elements programmatically. This allows precise control over shapes, paths, and attributes.
 
 ```csharp
 using Aspose.Svg;

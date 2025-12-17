@@ -49,3 +49,5 @@ Follow these steps to reference the component using the package manager GUI:
 1. Select **online** from the left menu.
 1. Type **Aspose.SVG** into the search box to find Aspose.SVG for .NET.
 1. Click **Install/Update** next to the latest version of Aspose.SVG for .NET.
+
+For more information on how to get started with Aspose.SVG for .NET, please check out the official documentation chapter [**Getting Started – Aspose.SVG for .NET**](https://docs.aspose.com/svg/net/getting-started/).
