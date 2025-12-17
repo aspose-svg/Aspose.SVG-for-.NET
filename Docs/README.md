@@ -27,8 +27,8 @@ Short, task-oriented articles that demonstrate how to perform common operations:
 
 This repository also contains:
 
-* The [Examples](Examples) folder with ready-to-run code samples
-* Test and sample data files used by the examples
+* The **Examples** folder with ready-to-run code samples.
+* Test and sample data files used by the examples.
 
 The articles in `Docs` are designed to complement those examples and help you understand how and when to use them.
 
