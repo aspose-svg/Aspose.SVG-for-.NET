@@ -1,10 +1,5 @@
 ﻿using Aspose.Svg;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharp.LoadSaveConvert
 {
@@ -13,7 +8,8 @@ namespace CSharp.LoadSaveConvert
         public static void Run()
         {
             //ExStart: LoadDocumentFromFile
-            string dataDir = RunExamples.GetDataDir_Open();
+            // Input files for open examples are located in Examples/Data/open/
+            string dataDir = Path.Combine(RunExamples.GetDataDir_Data(), "open\\");
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {

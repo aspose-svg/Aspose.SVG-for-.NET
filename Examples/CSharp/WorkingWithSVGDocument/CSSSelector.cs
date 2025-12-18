@@ -1,10 +1,6 @@
 ﻿using Aspose.Svg;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharp.WorkingWithSVGDocument
 {
@@ -13,7 +9,8 @@ namespace CSharp.WorkingWithSVGDocument
         public static void Run()
         {
             //ExStart: CSSSelector
-            string dataDir = RunExamples.GetDataDir_SVG();
+            // Input SVG files for working with SVG document examples are located in Examples/Data/svg/
+            string dataDir = Path.Combine(RunExamples.GetDataDir_Data(), "svg\\");
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {

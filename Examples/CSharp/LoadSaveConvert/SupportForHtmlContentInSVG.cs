@@ -1,10 +1,5 @@
 ﻿using Aspose.Svg;
 using Aspose.Svg.Rendering.Image;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharp.LoadSaveConvert
 {
@@ -13,7 +8,7 @@ namespace CSharp.LoadSaveConvert
         public static void Run()
         {
             //ExStart: 1
-            string dataDir = RunExamples.GetDataDir_Convert();
+            string outputDir = RunExamples.GetDataDir_OutputConvert();
 
             string svgCode = "<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'>" +
                 "<style>" +
@@ -38,7 +33,7 @@ namespace CSharp.LoadSaveConvert
 
             using (var document = new SVGDocument(svgCode, "."))
             {
-                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Jpeg), dataDir + "SupportForHtmlContentInSVG_out.jpg"))
+                using (var device = new ImageDevice(new ImageRenderingOptions(ImageFormat.Jpeg), outputDir + "SupportForHtmlContentInSVG_out.jpg"))
                 {
                     document.RenderTo(device);
                 }

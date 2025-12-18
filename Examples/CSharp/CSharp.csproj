@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <!-- Change to 'Exe' if this is a console application, 'Library' if it's a class library -->
     <OutputType>Exe</OutputType>
   </PropertyGroup>
@@ -13,7 +13,7 @@
 
   <!-- Example of referencing Aspose.SVG via NuGet -->
   <ItemGroup>
-    <PackageReference Include="Aspose.SVG" Version="24.12.0" />
+    <PackageReference Include="Aspose.SVG" Version="25.11.0" />
     <PackageReference Include="CommandLineParser" Version="2.9.1" />
   </ItemGroup>
 

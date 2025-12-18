@@ -1,12 +1,7 @@
 ﻿using Aspose.Svg;
 using Aspose.Svg.Rendering;
 using Aspose.Svg.Rendering.Xps;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharp.LoadSaveConvert
 {
@@ -16,11 +11,12 @@ namespace CSharp.LoadSaveConvert
         {
             //ExStart: ConvertSVGFilesUsingRenderer
             string dataDir = RunExamples.GetDataDir_Convert();
+            string outputDir = RunExamples.GetDataDir_OutputConvert();
 
             using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
                 using (SvgRenderer renderer = new SvgRenderer())
-                using (XpsDevice device = new XpsDevice(dataDir + "ConvertSVGFilesUsingRenderer_out.xps"))
+                using (XpsDevice device = new XpsDevice(outputDir + "ConvertSVGFilesUsingRenderer_out.xps"))
                 {
                     renderer.Render(device, document);
                 }
