@@ -10,6 +10,10 @@ using System.IO;
 
 namespace PhotoEffects
 {
+    // This console example demonstrates how to apply SVG filter effects to raster images
+    // with Aspose.SVG for .NET. It builds an SVG document in memory, references a source
+    // bitmap through an <image> element, applies a selected SVG filter, and renders the
+    // filtered result to an output image file.
     class Program
     {
         public class Options
@@ -18,7 +22,7 @@ namespace PhotoEffects
             public string Source { get; set; }
             [Option('o', "output", Required = true, HelpText = "An output image file")]
             public string Output { get; set; }
-            [Option('f', "filter", Required = false, HelpText = "A filter name from the list: Instagram, DistortionMirror, Vintage, Retro, BlurredLights, BrushStrokes, Movie")]
+            [Option('f', "filter", Required = true, HelpText = "A filter name from the list: Instagram, DistortionMirror, Vintage, Retro, BlurredLights, BrushStrokes, Movie")]
             public string Filter { get; set; }
 
         }
@@ -34,17 +38,20 @@ namespace PhotoEffects
 
         private static void ApplyFilter(string srcFile, string filterId, string outputFile)
         {
-            //Create a new svg document
+            // Create a new SVG document that will be used as an image-processing canvas.
             using (var svgDoc = new SVGDocument())
             {
-                //Create an element <g> to which the filter will be applied.
+                // Create a <g> element. Applying the SVG filter to the group lets the filter
+                // affect the embedded raster image as a single visual object.
                 var g = svgDoc.CreateElementNS("http://www.w3.org/2000/svg", "g");
                 svgDoc.RootElement.AppendChild(g);
-                using (var image = System.Drawing.Image.FromFile(srcFile))
+                var sourcePath = Path.GetFullPath(srcFile);
+
+                using (var image = System.Drawing.Image.FromFile(sourcePath))
                 {
-                    //Create <image> element 
+                    // Create an SVG <image> element that references the source bitmap file.
                     var imageElement = (SVGImageElement)svgDoc.CreateElementNS("http://www.w3.org/2000/svg", "image");
-                    imageElement.SetAttribute("href", srcFile);
+                    imageElement.SetAttribute("href", sourcePath);
                     var w = image.Width;
                     var h = image.Height;
 
@@ -55,27 +62,36 @@ namespace PhotoEffects
                         w = (int)(maxSize * w / size);
                         h = (int)(maxSize * h / size);
                     }
-                    //Set the dimensions of <image> and <svg> elements to keep the original image size.
+                    // Set the dimensions of the <image> and root <svg> elements so Aspose.SVG
+                    // renders the filtered raster image at the expected output size.
                     imageElement.Height.BaseVal.ValueAsString = $"{h}px";
                     imageElement.Width.BaseVal.ValueAsString = $"{w}px";
 
                     svgDoc.RootElement.Height.BaseVal.ValueAsString = $"{h}px";
                     svgDoc.RootElement.Width.BaseVal.ValueAsString = $"{w}px";
 
-                    //Append <image> into <g> element.
+                    // Add the raster image to the filtered SVG group.
                     g.AppendChild(imageElement);
                 }
-                //Load svg file which contains the list of available filters.
-                //We use the filters.svg file as a repository because it is easy to edit and add new filters.
-                using (var filtersStream = new FileStream("filters.svg", FileMode.Open))
-                using (var filtersDoc = new SVGDocument(filtersStream, Directory.GetCurrentDirectory()))
+                // Load filters.svg, a reusable SVG filter library for image effects such as
+                // Vintage, Retro, Instagram, Blur, Brush Strokes, and Movie-style color grading.
+                var filtersPath = Path.Combine(AppContext.BaseDirectory, "filters.svg");
+
+                using (var filtersStream = File.Open(filtersPath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                using (var filtersDoc = new SVGDocument(filtersStream, AppContext.BaseDirectory))
                 {
                     var filter = filtersDoc.GetElementById(filterId);
+                    if (filter == null)
+                    {
+                        throw new ArgumentException($"Filter '{filterId}' was not found in filters.svg.", nameof(filterId));
+                    }
+
                     svgDoc.RootElement.AppendChild(filter);
                     g.SetAttribute("filter", $"url(#{filter.Id})");
-                    var options =new ImageSaveOptions() { HorizontalResolution = 96, VerticalResolution = 96 };
+                    var options = new ImageSaveOptions() { HorizontalResolution = 96, VerticalResolution = 96 };
                     options.PageSetup.Sizing = SizingType.FitContent;
-                    //Here we convert svg document with image and  graphic filter to the result image file.
+                    // Convert the generated SVG document to a raster image. Aspose.SVG renders
+                    // the <image> element together with the selected SVG filter effect.
                     Converter.ConvertSVG(svgDoc, options, outputFile);
                 }
 
