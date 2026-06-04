@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "PhotoEffects": {
+      "commandName": "Project",
+      "commandLineArgs": "--source demos\\tiger.bmp --filter Vintage --output demos\\tiger-vintage-debug.png",
+      "workingDirectory": "$(ProjectDir)"
+    }
+  }
+}
