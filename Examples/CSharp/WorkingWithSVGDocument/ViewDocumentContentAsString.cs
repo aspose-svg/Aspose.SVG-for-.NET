@@ -1,5 +1,6 @@
-﻿using Aspose.Svg;
+using Aspose.Svg;
 using System;
+using System.IO;
 
 namespace CSharp.WorkingWithSVGDocument
 {
@@ -7,12 +8,33 @@ namespace CSharp.WorkingWithSVGDocument
     {
         public static void Run()
         {
-            //ExStart: ViewDocumentContentAsString
-            using (var document = new SVGDocument("http://www1.plurib.us/1shot/2008/circle_design/circles_single.svg"))
+            ViewRootElementOuterHtml();
+            ViewSelectedElementOuterHtml();
+        }
+
+        public static void ViewRootElementOuterHtml()
+        {
+            // View the full SVG document content as a string using Aspose.SVG for .NET.
+            // OuterHTML is useful when you need to inspect generated, loaded, or edited SVG markup.
+            string dataDir = RunExamples.GetDataDir_SVG();
+
+            using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
             {
                 Console.WriteLine(document.DocumentElement.OuterHTML);
             }
-            //ExEnd: ViewDocumentContentAsString
+        }
+
+        public static void ViewSelectedElementOuterHtml()
+        {
+            // View the markup of a selected SVG element.
+            // This keeps console output focused when you only need to inspect one DOM node.
+            string dataDir = RunExamples.GetDataDir_SVG();
+
+            using (var document = new SVGDocument(Path.Combine(dataDir, "shapes_svg.svg")))
+            {
+                var rectangle = document.QuerySelector("rect[style*='FireBrick']");
+                Console.WriteLine(rectangle.OuterHTML);
+            }
         }
     }
 }

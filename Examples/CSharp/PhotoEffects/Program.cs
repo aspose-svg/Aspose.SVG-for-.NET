@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2001-2021 Aspose Pty Ltd. All Rights Reserved.
+﻿// Copyright (c) 2001-2026 Aspose Pty Ltd. All Rights Reserved.
 
 using Aspose.Svg;
 using Aspose.Svg.Converters;
