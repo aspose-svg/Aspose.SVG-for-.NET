@@ -1,0 +1,19 @@
+{
+  "profiles": {
+    "GettingStarted": {
+      "commandName": "Project",
+      "commandLineArgs": "--section GettingStarted",
+      "workingDirectory": "$(ProjectDir)"
+    },
+    "LoadSaveConvert": {
+      "commandName": "Project",
+      "commandLineArgs": "--section LoadSaveConvert",
+      "workingDirectory": "$(ProjectDir)"
+    },
+    "WorkingWithSVGDocument": {
+      "commandName": "Project",
+      "commandLineArgs": "--section WorkingWithSVGDocument",
+      "workingDirectory": "$(ProjectDir)"
+    }
+  }
+}

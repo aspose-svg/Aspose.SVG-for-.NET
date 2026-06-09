@@ -1,4 +1,4 @@
-﻿using Aspose.Svg;
+using Aspose.Svg;
 using Aspose.Svg.Dom;
 using Aspose.Svg.Dom.Traversal.Filters;
 using System;
@@ -10,20 +10,33 @@ namespace CSharp.WorkingWithSVGDocument
     {
         public static void Run()
         {
-            //ExStart: NodeIterator
+            // Iterate through SVG nodes with a custom NodeFilter in Aspose.SVG for .NET.
+            // The iterator visits only nodes accepted by RectFilter.
             string dataDir = RunExamples.GetDataDir_SVG();
 
-            using (var document = new SVGDocument(Path.Combine(dataDir, "paths.svg")))
+            using (var document = new SVGDocument(Path.Combine(dataDir, "shapes_svg.svg")))
             {
-                // Create a node iterator
                 using (var iterator = document.CreateNodeIterator(document, NodeFilter.SHOW_ALL, new RectFilter()))
                 {
-                    Console.WriteLine((iterator.NextNode() as Element)?.OuterHTML);
-                    Console.WriteLine((iterator.NextNode() as Element)?.OuterHTML);
-                    Console.WriteLine((iterator.NextNode() as Element)?.OuterHTML);
+                    Node node;
+                    while ((node = iterator.NextNode()) != null)
+                    {
+                        Console.WriteLine((node as Element)?.OuterHTML);
+                    }
                 }
             }
-            //ExEnd: NodeIterator
+        }
+
+        // Custom NodeFilter for SVG DOM traversal. It accepts only <rect> elements
+        // and is passed to CreateNodeIterator() to filter the nodes returned by the iterator.
+        private class RectFilter : NodeFilter
+        {
+            public override short AcceptNode(Node n)
+            {
+                return string.Equals("rect", n.NodeName)
+                    ? FILTER_ACCEPT
+                    : FILTER_REJECT;
+            }
         }
     }
 }

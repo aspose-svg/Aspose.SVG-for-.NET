@@ -3,6 +3,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <!-- Change to 'Exe' if this is a console application, 'Library' if it's a class library -->
     <OutputType>Exe</OutputType>
+    <UseAppHost>false</UseAppHost>
   </PropertyGroup>
 
   <ItemGroup>

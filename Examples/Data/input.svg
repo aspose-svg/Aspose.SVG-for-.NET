@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="200">
+  <style>
+    text {
+      font-size: 32px;      
+    }
+  </style>
+
+  <text x="20" y="60" style="font-family: arial; fill: red;" >CSS Styled Text</text>
+</svg>
