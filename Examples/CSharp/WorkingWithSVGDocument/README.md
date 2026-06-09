@@ -1,8 +1,15 @@
 # Working with SVG Documents in C#
 
-This folder contains practical examples that show how to create, load, inspect, edit, navigate, and save SVG documents with **Aspose.SVG for .NET 26.5.0**.
+This folder contains practical examples that show how to create, load, inspect, edit, navigate, and save SVG documents with [**Aspose.SVG for .NET**](https://docs.aspose.com/svg/net/).
 
 The examples are designed as companion code for product documentation. They use real SVG files from the shared `Examples/Data/` folder and write generated files to `Examples/output/svg/`.
+
+## Product Resources
+
+- [SVGDocument API Reference](https://reference.aspose.com/svg/net/aspose.svg/svgdocument/)
+- [Inspect and Navigate SVG in C#](https://docs.aspose.com/svg/net/navigation-inspection/)
+- [Save an SVG Document in C#](https://docs.aspose.com/svg/net/save-svg-document/)
+- [Aspose.Svg Namespace API Reference](https://reference.aspose.com/svg/net/aspose.svg/)
 
 ## What You Can Learn
 
@@ -22,10 +29,8 @@ The examples are designed as companion code for product documentation. They use 
 ## Requirements
 
 - .NET SDK compatible with `net6.0`.
-- Aspose.SVG for .NET `26.5.0`.
+- Aspose.SVG for .NET. The package version is defined in `Examples/CSharp/CSharp.csproj`.
 - Input files from `Examples/Data/`.
-
-The package version is configured in `Examples/CSharp/CSharp.csproj`.
 
 ## How to Run
 
@@ -128,7 +133,7 @@ This keeps source assets reusable across documentation sections and keeps genera
 
 File: `CreateAndLoadSVGDocument.cs`
 
-This group demonstrates the main ways to create and load SVG documents with Aspose.SVG for .NET:
+This group demonstrates the main ways to create and load SVG documents with Aspose.SVG for .NET. For API details, see the [SVGDocument API Reference](https://reference.aspose.com/svg/net/aspose.svg/svgdocument/).
 
 - `CreateEmptySVGDocument()` creates a blank SVG document and saves it.
 - `CreateSVGDocumentFromString()` creates SVG from in-memory markup.
@@ -148,7 +153,7 @@ Files:
 - `ViewDocumentContentAsString.cs`
 - `InspectDocumentContent.cs`
 
-These examples show how to read SVG markup and inspect DOM properties:
+These examples show how to read SVG markup and inspect DOM properties. For product documentation, see [Inspect and Navigate SVG in C#](https://docs.aspose.com/svg/net/navigation-inspection/).
 
 - print the root element `OuterHTML`;
 - print selected element markup;
@@ -160,7 +165,7 @@ These examples show how to read SVG markup and inspect DOM properties:
 
 File: `TraverseSVGElement.cs`
 
-This group demonstrates basic SVG DOM navigation:
+This group demonstrates basic SVG DOM navigation. For product documentation, see [Inspect and Navigate SVG in C#](https://docs.aspose.com/svg/net/navigation-inspection/).
 
 - start from the root `<svg>` element;
 - move to child elements;
@@ -173,7 +178,7 @@ Use these examples when you need to understand or inspect an existing SVG docume
 
 File: `CSSSelector.cs`
 
-These examples use familiar CSS selector syntax:
+These examples use familiar CSS selector syntax. For product documentation, see [Inspect and Navigate SVG in C#](https://docs.aspose.com/svg/net/navigation-inspection/).
 
 - `QuerySelector()` to find the first matching element;
 - `QuerySelectorAll()` to find multiple elements;
@@ -187,7 +192,7 @@ This is often the easiest way to edit known parts of an SVG file.
 
 File: `XPathQuery.cs`
 
-XPath examples are useful when selectors need to express document structure or attributes more explicitly:
+XPath examples are useful when selectors need to express document structure or attributes more explicitly. For product documentation, see [Inspect and Navigate SVG in C#](https://docs.aspose.com/svg/net/navigation-inspection/).
 
 - select a group by attribute;
 - select a rectangle by coordinate;
@@ -221,7 +226,7 @@ These examples demonstrate common SVG editing tasks:
 
 File: `SaveSVGDocumentExamples.cs`
 
-This group covers common persistence scenarios:
+This group covers common persistence scenarios. For product documentation, see [Save an SVG Document in C#](https://docs.aspose.com/svg/net/save-svg-document/).
 
 - save SVG to a file;
 - save SVG to an Aspose `Url`;
