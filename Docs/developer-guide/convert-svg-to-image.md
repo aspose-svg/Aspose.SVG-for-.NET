@@ -1,72 +1,95 @@
-# Convert SVG to Raster Images in .NET
+# Convert SVG to Raster Images in C#
 
-[**Aspose.SVG for .NET**](https://products.aspose.com/svg/net/) allows you to convert SVG documents into popular raster image formats such as PNG, JPG, BMP, TIFF, and GIF while preserving visual accuracy and layout consistency. The rendering process is fully configurable, enabling you to control essential parameters including background color, resolution (DPI), output size, and page settings through the ImageRenderingOptions API. This flexibility makes SVG-to-image conversion suitable for web delivery, previews, reporting, and environments where vector graphics are not supported.
+[**Aspose.SVG for .NET**](https://products.aspose.com/svg/net/) converts SVG documents to raster image formats such as PNG, JPEG, BMP, TIFF, and GIF. SVG to image conversion is useful for previews, thumbnails, web delivery, reports, and systems that require bitmap output.
 
-## Convert SVG to PNG, JPG, BMP, TIFF, and GIF
+Use this guide when you need to render SVG as PNG, JPEG, TIFF, BMP, or GIF in a .NET application.
 
-Aspose.SVG for .NET provides multiple ways to convert SVG documents into raster image formats, allowing developers to choose the most appropriate API depending on the required level of control and rendering customization.
+## Product Resources
 
-### SVG to PNG Examples
+- [Aspose.SVG for .NET Documentation](https://docs.aspose.com/svg/net/)
+- [Aspose.SVG for .NET API Reference](https://reference.aspose.com/svg/net/)
+- [Convert SVG to Image](https://docs.aspose.com/svg/net/convert-svg-to-image/)
+- [Convert SVG Files](https://docs.aspose.com/svg/net/convert-svg/)
+- [ImageSaveOptions API Reference](https://reference.aspose.com/svg/net/aspose.svg.saving/imagesaveoptions/)
+- [Examples: ConvertRenderMergeSvg](../../Examples/CSharp/ConvertRenderMergeSvg/README.md)
 
-The **first approach** uses the high-level Converter API and is suitable for quick and straightforward SVG-to-image conversion with minimal configuration.
+## Convert SVG to PNG
+
+Use `ImageSaveOptions` with `Converter.ConvertSVG()` for simple SVG to PNG conversion. PNG is the default output image format when `ImageSaveOptions` is created without an explicit `ImageFormat`.
 
 ```csharp
-using Aspose.Svg;
-using Aspose.Svg.Saving;
 using Aspose.Svg.Converters;
+using Aspose.Svg.Saving;
 
-// Initialize an SVG document from a file
-using (SVGDocument document = new SVGDocument("svg-to-png.svg"))
-{
-    // Create an instance of the ImageSaveOptions class
-    ImageSaveOptions pngSaveOptions = new ImageSaveOptions();
-
-    // Convert SVG to PNG
-    Converter.ConvertSVG(document, pngSaveOptions, "svg-to-png.png");
-}
+Converter.ConvertSVG("input.svg", new ImageSaveOptions(), "output.png");
 ```
 
-The **second approach** relies on the rendering pipeline (ImageRenderingOptions and ImageDevice) and is recommended when you need precise control over rendering parameters such as resolution, background, and output size.
+## Convert SVGDocument to PNG
+
+Load an `SVGDocument` when you need to edit or inspect SVG before rendering.
 
 ```csharp
 using Aspose.Svg;
-using Aspose.Svg.Rendering;
-using Aspose.Svg.Rendering.Image;
+using Aspose.Svg.Converters;
+using Aspose.Svg.Saving;
 
 using (var document = new SVGDocument("input.svg"))
 {
-    var options = new ImageRenderingOptions(ImageFormat.Png);
-
-    using (var device = new ImageDevice(options, "output.png"))
-    {
-        document.RenderTo(device);
-    }
+    Converter.ConvertSVG(document, new ImageSaveOptions(), "output.png");
 }
 ```
 
-### Rendering Options
+## Convert SVG to JPEG, BMP, TIFF, or GIF
 
-The `ImageRenderingOptions` class provides fine-grained control over how an SVG document is rendered into a raster image. It allows you to configure both visual output and technical parameters to ensure predictable and high-quality results across different target formats.
+Set the target image format in `ImageSaveOptions`.
 
-Using `ImageRenderingOptions`, you can:
+```csharp
+using Aspose.Svg.Converters;
+using Aspose.Svg.Rendering.Image;
+using Aspose.Svg.Saving;
 
-* **Control output resolution** by specifying horizontal and vertical DPI, which directly affects image clarity and physical size.
-* **Define the background color** for the rendered image, which is especially important when exporting SVG files with transparent backgrounds.
-* **Adjust rendering size and scaling** through page and viewport settings to match exact layout or preview requirements.
-* **Configure format-specific options** for image rendering, such as compression behavior and pixel format, depending on the target image type.
-* **Apply consistent rendering behavior** across PNG, JPG, BMP, TIFF, and GIF outputs using a unified API.
+var options = new ImageSaveOptions(ImageFormat.Jpeg);
+Converter.ConvertSVG("input.svg", options, "output.jpeg");
+```
 
-These options make `ImageRenderingOptions` essential for scenarios where SVG content must be rendered with precise visual fidelity, controlled resolution, and predictable output characteristics in .NET applications.
+Use `ImageFormat.Png`, `ImageFormat.Jpeg`, `ImageFormat.Bmp`, `ImageFormat.Tiff`, or `ImageFormat.Gif` depending on the output you need.
 
-To convert to other formats, simply change the `ImageFormat` value (for example, `ImageFormat.Jpeg` or `ImageFormat.Tiff`). This approach ensures consistent visual results across all supported raster formats.
+## Customize Raster Output
 
-## See Also
+Configure `ImageSaveOptions` when you need predictable output size, background color, page setup, or rendering quality.
 
-- [**Official Documentation**](https://docs.aspose.com/svg/net/convert-svg/)
-Detailed guides and advanced scenarios for working with SVG documents in .NET.
-- [**API Reference**](https://reference.aspose.com/svg/net/aspose.svg.converters/)
-Explore the full API interface, classes, methods, and configuration options in the official reference.
-- [**Online SVG Converter**](https://products.aspose.app/svg/conversion)
-Try SVG conversion online without writing code using the Aspose web application.
-- [**GitHub Repository Examples**](https://github.com/aspose-svg/Aspose.SVG-for-.NET/tree/master/Examples)
-This repository contains ready-to-use code examples and sample data files that demonstrate SVG conversion, rendering, and manipulation with Aspose.SVG for .NET. Use these examples as a starting point or reference when integrating SVG processing into your own applications.
+```csharp
+using Aspose.Svg.Converters;
+using Aspose.Svg.Rendering.Image;
+using Aspose.Svg.Saving;
+using System.Drawing;
+
+var options = new ImageSaveOptions(ImageFormat.Png)
+{
+    BackgroundColor = Color.White
+};
+
+Converter.ConvertSVG("input.svg", options, "output.png");
+```
+
+## When to Use SVG to Image Conversion
+
+- Create PNG previews from SVG files.
+- Generate JPEG thumbnails for content management systems.
+- Render SVG diagrams into bitmap reports.
+- Produce TIFF or BMP output for legacy image workflows.
+- Convert SVG graphics for environments that do not support vector rendering.
+
+## Common Questions
+
+### Can Aspose.SVG convert SVG to PNG?
+
+Yes. Use `Converter.ConvertSVG()` with `ImageSaveOptions`. PNG is the default format, so `new ImageSaveOptions()` is enough for basic SVG to PNG conversion.
+
+### Can Aspose.SVG convert SVG to JPEG?
+
+Yes. Set `ImageFormat.Jpeg` in `ImageSaveOptions`.
+
+### Can I set a background color for transparent SVG?
+
+Yes. Use the `BackgroundColor` property in image save options with a `System.Drawing.Color` value.

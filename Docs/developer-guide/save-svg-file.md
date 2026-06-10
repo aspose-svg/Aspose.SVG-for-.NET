@@ -1,27 +1,54 @@
-# Save SVG Documents in .NET
+# Save SVG Files in C#
 
-Saving SVG documents is a fundamental feature of [**Aspose.SVG for .NET**](https://products.aspose.com/svg/net/), allowing developers to persist created or modified SVG files to disk or streams. The library ensures full compliance with the SVG specification while providing flexible options for saving and compression.
+[**Aspose.SVG for .NET**](https://products.aspose.com/svg/net/) can save created or modified SVG documents to regular SVG files, URI-based destinations, compressed SVGZ files, and custom resource handlers.
+
+Use this guide when you need to persist SVG changes, save generated SVG markup, create compressed SVGZ output, or save an edited SVG document from a .NET application.
+
+## Product Resources
+
+- [Aspose.SVG for .NET Documentation](https://docs.aspose.com/svg/net/)
+- [Aspose.SVG for .NET API Reference](https://reference.aspose.com/svg/net/)
+- [Save SVG File](https://docs.aspose.com/svg/net/save-svg-file/)
+- [Supported File Formats](../getting-started/supported-file-formats.md)
+- [SVGDocument API Reference](https://reference.aspose.com/svg/net/aspose.svg/svgdocument/)
+- [Examples: WorkingWithSVGDocument](../../Examples/CSharp/WorkingWithSVGDocument/README.md)
 
 ## Save an SVG Document to a File
 
-After creating or editing an SVG document, you can save it to a file in standard SVG format.
+After creating, loading, or editing an SVG document, call `Save()` with an output file path.
 
 ```csharp
 using Aspose.Svg;
 
 using (var document = new SVGDocument("input.svg"))
 {
-    // Perform edits or build SVG
-
     document.Save("output.svg");
 }
 ```
 
-This method writes the SVG content to the specified file path while maintaining the document structure and elements.
+## Save After DOM Editing
 
-## Save Compressed SVG (SVGZ)
+Most save workflows start with a DOM update. For example, select a rectangle, change its fill color, and save the edited SVG.
 
-Aspose.SVG supports saving SVG files in compressed **SVGZ** format, reducing file size for storage or web delivery.
+```csharp
+using Aspose.Svg;
+
+using (var document = new SVGDocument("input.svg"))
+{
+    var rect = document.RootElement.QuerySelector("rect");
+
+    if (rect != null)
+    {
+        rect.SetAttribute("fill", "teal");
+    }
+
+    document.Save("edited.svg");
+}
+```
+
+## Save Compressed SVGZ
+
+SVGZ is a GZIP-compressed SVG format. Use `SVGSaveFormat.SVGZ` when you need a smaller file for storage or delivery.
 
 ```csharp
 using Aspose.Svg;
@@ -29,31 +56,40 @@ using Aspose.Svg.Saving;
 
 using (var document = new SVGDocument("input.svg"))
 {
-    var options = new SVGSaveOptions
-    {
-        SaveFormat = SVGSaveFormat.SVGZ
-    };
-
-    document.Save("output.svgz", options);
+    document.Save("output.svgz", SVGSaveFormat.SVGZ);
 }
 ```
 
-This approach provides GZIP compression while keeping full vector fidelity and SVG compatibility.
+## Save SVGZ Back to SVG
 
+Aspose.SVG can load compressed SVGZ files. To save the document as regular SVG, use `SVGSaveFormat.SVG`.
 
-## Notes on Saving
+```csharp
+using Aspose.Svg;
+using Aspose.Svg.Saving;
 
-* The saved files are fully compliant with the SVG specification.
-* You can combine saving with editing or creation APIs to build complete workflows.
-* SVGZ files can be loaded and processed the same way as regular SVG files.
+using (var document = new SVGDocument("input.svgz"))
+{
+    document.Save("expanded-output.svg", SVGSaveFormat.SVG);
+}
+```
 
-## See Also
+For advanced workflows that save the main SVG file and external resources to memory, databases, cloud storage, or archives, use a custom `ResourceHandler`. See `SaveSVGToMemoryStreams()` in [`SaveSVGDocumentExamples.cs`](../../Examples/CSharp/WorkingWithSVGDocument/SaveSVGDocumentExamples.cs).
 
-- [**Official Documentation**](https://docs.aspose.com/svg/net/save-svg-document/)
-Detailed guides and advanced scenarios for working with SVG documents in .NET.
-- [**API Reference**](https://reference.aspose.com/svg/net/)
-Explore the full API interface, classes, methods, and configuration options in the official reference.
-- [**Online SVG Converter**](https://products.aspose.app/svg/applications)
-Try SVG conversion online without writing code using the Aspose web application.
-- [**GitHub Repository Examples**](https://github.com/aspose-svg/Aspose.SVG-for-.NET/tree/master/Examples)
-This repository contains ready-to-use code examples and sample data files that demonstrate SVG conversion, rendering, and manipulation with Aspose.SVG for .NET. Use these examples as a starting point or reference when integrating SVG processing into your own applications.
+## Common Questions
+
+### Can Aspose.SVG save SVG files after editing?
+
+Yes. Load an `SVGDocument`, update the DOM, and call `Save("output.svg")`.
+
+### Can Aspose.SVG save SVGZ files?
+
+Yes. Use `document.Save("output.svgz", SVGSaveFormat.SVGZ)`.
+
+### Can Aspose.SVG convert SVGZ back to SVG?
+
+Yes. Load the `.svgz` file with `SVGDocument` and save it with `SVGSaveFormat.SVG`.
+
+### Can I save SVG directly to a Stream?
+
+`SVGDocument.Save()` does not provide a direct `Stream` overload. Use `DocumentElement.OuterHTML` when you need SVG markup as a string, or use a custom `ResourceHandler` for advanced in-memory output and resource handling.

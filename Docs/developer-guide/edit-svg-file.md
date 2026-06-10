@@ -1,105 +1,124 @@
-# Edit SVG Files in .NET
+# Edit SVG Files in C#
 
-Editing SVG files programmatically is a core capability of [**Aspose.SVG for .NET**](https://products.aspose.com/svg/net/), enabling developers to create, modify, and inspect SVG documents using a standards‑compliant DOM API. The library provides fine‑grained control over SVG structure, attributes, styles, and geometry, making it suitable for automation, graphics processing, and dynamic SVG generation in .NET applications.
+**Aspose.SVG for .NET** provides a standards-based SVG DOM API for editing SVG files programmatically. You can load an SVG document, select elements, change attributes and styles, add new nodes, and save the result.
 
-## Load or Create an SVG Document
+Use this guide when you need to modify SVG color, size, text, shapes, paths, CSS, attributes, or document structure in a .NET application.
 
-You can start editing an SVG file by loading an existing document or creating a new one from scratch. Aspose.SVG supports loading SVG content from files, streams, URLs, or memory strings.
+## Product Resources
+
+- [Aspose.SVG for .NET Documentation](https://docs.aspose.com/svg/net/)
+- [Aspose.SVG for .NET API Reference](https://reference.aspose.com/svg/net/)
+- [Edit SVG File](https://docs.aspose.com/svg/net/edit-svg-file/)
+- [Modify SVG Styles Programmatically](https://docs.aspose.com/svg/net/modify-svg-styles-programmatically/)
+- [How to Change SVG Color](https://docs.aspose.com/svg/net/how-to-change-svg-color/)
+- [SVGDocument API Reference](https://reference.aspose.com/svg/net/aspose.svg/svgdocument/)
+- [Examples: WorkingWithSVGDocument](../../Examples/CSharp/WorkingWithSVGDocument/README.md)
+- [Examples: WorkingWithSvgColors](../../Examples/CSharp/WorkingWithSvgColors/README.md)
+
+## Load an SVG File
+
+Start by loading the SVG document from a file path.
 
 ```csharp
 using Aspose.Svg;
 
-// Load an existing SVG file
 using (var document = new SVGDocument("input.svg"))
 {
-    // SVG document is ready for editing
+    // The SVG DOM is ready for editing.
 }
 ```
 
-Creating a new SVG document allows you to build graphics programmatically using the DOM or Builder API.
+## Change SVG Attributes
 
-## Modify SVG Elements and Attributes
-
-Aspose.SVG exposes the SVG DOM, allowing you to edit elements and attributes using familiar DOM methods. You can update sizes, colors, transformations, and any SVG‑specific attributes directly.
+Use `SetAttribute()` to change root attributes, shape geometry, colors, transformations, and CSS-like presentation attributes.
 
 ```csharp
 using Aspose.Svg;
-using Aspose.Svg.Dom;
 
 using (var document = new SVGDocument("input.svg"))
 {
-    var svg = document.DocumentElement;
+    document.RootElement.SetAttribute("width", "400");
+    document.RootElement.SetAttribute("height", "300");
+    document.RootElement.SetAttribute("viewBox", "0 0 400 300");
 
-    // Change SVG width and height
-    svg.SetAttribute("width", "400");
-    svg.SetAttribute("height", "300");
+    document.Save("resized.svg");
 }
 ```
 
-This approach is useful for dynamic updates such as resizing icons, changing colors, or adjusting layout parameters.
+## Select and Recolor an SVG Element
 
-## Add New SVG Elements
-
-You can insert new elements into an SVG document using `CreateElementNS` and standard DOM insertion methods. This enables you to construct or extend SVG graphics programmatically.
-
-```csharp
-using Aspose.Svg;
-using Aspose.Svg.Dom;
-
-using (var document = new SVGDocument("input.svg"))
-{
-    var svg = document.DocumentElement;
-
-    var circle = (SVGElement)document.CreateElementNS("http://www.w3.org/2000/svg", "circle");
-    circle.SetAttribute("cx", "50");
-    circle.SetAttribute("cy", "50");
-    circle.SetAttribute("r", "40");
-    circle.SetAttribute("fill", "orange");
-
-    svg.AppendChild(circle);
-}
-```
-
-This method is ideal for generating shapes, overlays, annotations, or dynamic visual elements.
-
-## Navigate and Query SVG Content
-
-You can traverse and inspect SVG documents using DOM traversal methods, CSS selectors, or XPath queries. This allows you to locate specific elements and apply targeted modifications.
+CSS selectors are convenient for targeted SVG edits.
 
 ```csharp
 using Aspose.Svg;
 
 using (var document = new SVGDocument("input.svg"))
 {
-    var elements = document.QuerySelectorAll("rect[fill='blue']");
+    var circle = document.RootElement.QuerySelector("circle");
 
-    foreach (var element in elements)
+    if (circle != null)
     {
-        element.SetAttribute("fill", "green");
+        circle.SetAttribute("fill", "green");
+        circle.SetAttribute("stroke", "#004d40");
     }
+
+    document.Save("recolored.svg");
 }
 ```
 
-Such queries simplify batch updates and conditional editing of complex SVG documents.
+## Add a New SVG Element
 
-## Save the Updated SVG File
+Create SVG nodes with `CreateElementNS()` and append or insert them into the document.
 
-After editing, you can save the modified SVG document back to disk or another stream. The saved file remains fully compliant with the SVG specification.
+```csharp
+using Aspose.Svg;
+
+const string SvgNamespace = "http://www.w3.org/2000/svg";
+
+using (var document = new SVGDocument("input.svg"))
+{
+    var rect = document.CreateElementNS(SvgNamespace, "rect");
+    rect.SetAttribute("x", "20");
+    rect.SetAttribute("y", "20");
+    rect.SetAttribute("width", "120");
+    rect.SetAttribute("height", "80");
+    rect.SetAttribute("fill", "orange");
+
+    document.RootElement.AppendChild(rect);
+    document.Save("with-rectangle.svg");
+}
+```
+
+## Batch Edit Elements
+
+Use `QuerySelectorAll()` to update multiple matching nodes.
 
 ```csharp
 using Aspose.Svg;
 
 using (var document = new SVGDocument("input.svg"))
 {
-    // Perform SVG edits
+    var paths = document.QuerySelectorAll("path");
 
-    document.Save("edited.svg");
+    foreach (var path in paths)
+    {
+        path.SetAttribute("stroke", "white");
+    }
+
+    document.Save("paths-updated.svg");
 }
 ```
 
-## See Also
+## Common Questions
 
-* [**Official Documentation**](https://docs.aspose.com/svg/net/edit-svg-file/)
-* [**API Reference**](https://reference.aspose.com/svg/net/)
-* [**Online SVG Tools**](https://products.aspose.app/svg/applications)
-* [**GitHub Examples and Sample Data**](https://github.com/aspose-svg/Aspose.SVG-for-.NET/tree/master/Examples). This repository contains ready‑to‑use code examples and sample SVG files demonstrating common editing, conversion, and rendering scenarios with Aspose.SVG for .NET.
+### Can Aspose.SVG edit existing SVG files?
+
+Yes. Load an `SVGDocument`, modify DOM nodes or attributes, and call `Save()`.
+
+### Can I use CSS selectors in C#?
+
+Yes. Use `QuerySelector()` and `QuerySelectorAll()` to select SVG elements with CSS selector syntax.
+
+### Can I change SVG colors programmatically?
+
+Yes. Change `fill`, `stroke`, inline `style`, or CSS rules depending on how the SVG is styled.

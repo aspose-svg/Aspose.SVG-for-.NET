@@ -1,53 +1,127 @@
-# How to Install Aspose.SVG for .NET
+# Install Aspose.SVG for .NET
 
-## Installing Aspose.SVG for .NET through NuGet
+**Aspose.SVG for .NET** is distributed as a NuGet package. The recommended way to install it is to add the `Aspose.SVG` package to your .NET project and let NuGet restore the required assemblies.
 
-NuGet is a free, open-source developer-focused package management system for the .NET platform intent on simplifying the process of incorporating third party libraries into a .NET application during development. It is a Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects that use the .NET Framework. When you install the package, NuGet copies files to your solution and automatically makes the necessary changes, such as adding references and changing your app.config or web.config files. If you decide to remove the library, NuGet removes files and reverses whatever changes it made to your project so that no clutter is left.
+Use this page when you need to install Aspose.SVG for .NET, add it to a C# project, update the package, or verify that the library is ready for SVG creation, editing, rendering, conversion, and vectorization.
 
-### Referencing Aspose.SVG for .NET
+## Product Resources
 
-Taking benefit of this wonderful feature, we have bundled [Aspose.SVG for .NET](https://www.nuget.org/packages/Aspose.SVG) libraries into a NuGet package and uploaded it into a NuGet repository. With this option, you benefit from using Aspose.SVG for .NET without installing this component on your system. NuGet runs in Visual Studio 2010 and higher version(s), Visual Web Developer 2010, and Windows Phone Developer Tools 7.1.
+- [Aspose.SVG for .NET Documentation](https://docs.aspose.com/svg/net/)
+- [Aspose.SVG for .NET API Reference](https://reference.aspose.com/svg/net/)
+- [Aspose.SVG for .NET NuGet Package](https://www.nuget.org/packages/Aspose.SVG/)
+- [Aspose.SVG for .NET Product Page](https://products.aspose.com/svg/net/)
+- [Aspose.SVG Releases](https://releases.aspose.com/svg/net/)
+- [Aspose.SVG Support Forum](https://forum.aspose.com/c/svg/28)
 
-To get started:
+## Requirements
 
-1. Open your solution or project in Visual Studio.
-1. Add NuGet Package Manager as a Visual Studio extension:
-   1. Select the **Tools** menu followed by **Extension Manager**.
-   1. Select **Online Gallery** to get a complete list of packages available online.
-   1. Select **NuGet Package Manager**.
-   1. Click **Download**.
-   1. Once the package Manager is installed, restart Visual Studio to bring the changes into effect. 
-      When NuGet Package Manager is installed, you can find, install, remove, and update packages from the **Manage NuGet Packages** window, or by using PowerShell command-line commands in the **Package Manager Console** dedicated Visual Studio window. You can find both options if you select the **Tools** followed by the **Library Package Manager**.
+- A .NET project that targets a framework supported by the current Aspose.SVG package.
+- Visual Studio, JetBrains Rider, Visual Studio Code, or another .NET development environment.
+- NuGet package restore enabled.
+- Internet access for restoring the package from NuGet, unless your environment uses an internal package feed.
 
-### Install-Package using Package Manager Console
+## Install with .NET CLI
 
-To reference the component using the package manager console:
+Run this command from the folder that contains your `.csproj` file:
 
-1. Open your .NET application in Visual Studio.
-1. On the **Tools** menu, select **Library Package Manager** and then **Package Manager Console**.
-1. Type the command `Install-Package Aspose.SVG` to install the latest full release, or type the command `Install-Package Aspose.SVG -prerelease` to install the latest release including hotfixes.
-1. Press **Enter**.
+```powershell
+dotnet add package Aspose.SVG
+```
 
-### Update package using Package Manager Console
+Then restore and build the project:
 
-If you have already referenced the component through NuGet, follow these steps to update the reference to the latest version:
+```powershell
+dotnet restore
+dotnet build
+```
 
-1. Open your .NET application in Visual Studio.
-1. From the **Tools** menu, select **Library Package Manager**, followed by the **Package Manager Console** to open the Package Manager console.
-1. Type the command `Update-Package Aspose.SVG` to reference the latest full release, or type the command `Update-Package Aspose.SVG -prerelease` to install the latest release including hotfixes.
-1. Press **Enter**.
+## Install with Package Manager Console
 
-### Install-Package using the Package Manager GUI
+In Visual Studio, open **Tools > NuGet Package Manager > Package Manager Console** and run:
 
-Follow these steps to reference the component using the package manager GUI:
+```powershell
+Install-Package Aspose.SVG
+```
 
-1. Open your .NET application in Visual Studio.
-1. From the **Tools** menu, select **Library Package Manager** and **Manage NuGet Packages** from the **Solution** option. 
-   You can also get a similar option from the Solution Explorer:
-   1. Right-click the project name.
-   1. Select **Manage NuGet Packages**.
-1. Select **online** from the left menu.
-1. Type **Aspose.SVG** into the search box to find Aspose.SVG for .NET.
-1. Click **Install/Update** next to the latest version of Aspose.SVG for .NET.
+To update an existing package reference:
 
-For more information on how to get started with Aspose.SVG for .NET, please check out the official documentation chapter [**Getting Started – Aspose.SVG for .NET**](https://docs.aspose.com/svg/net/getting-started/).
+```powershell
+Update-Package Aspose.SVG
+```
+
+## Install with Visual Studio NuGet UI
+
+1. Open your solution in Visual Studio.
+2. Right-click the project.
+3. Select **Manage NuGet Packages**.
+4. Search for `Aspose.SVG`.
+5. Select the package and click **Install** or **Update**.
+
+## Add PackageReference Manually
+
+You can also add the package reference directly to a project file:
+
+```xml
+<ItemGroup>
+  <PackageReference Include="Aspose.SVG" Version="x.y.z" />
+</ItemGroup>
+```
+
+Use the version required by your project or omit the version when your dependency management process controls package versions centrally.
+
+## Verify Installation
+
+After installation, create and save a simple SVG document:
+
+```csharp
+using Aspose.Svg;
+
+using (var document = new SVGDocument())
+{
+    document.RootElement.SetAttribute("width", "300");
+    document.RootElement.SetAttribute("height", "120");
+    document.RootElement.SetAttribute("viewBox", "0 0 300 120");
+
+    var text = document.CreateElementNS("http://www.w3.org/2000/svg", "text");
+    text.SetAttribute("x", "20");
+    text.SetAttribute("y", "70");
+    text.SetAttribute("font-size", "24");
+    text.TextContent = "Aspose.SVG for .NET";
+    document.RootElement.AppendChild(text);
+
+    document.Save("hello.svg");
+}
+```
+
+If the project builds and `hello.svg` is created, Aspose.SVG for .NET is installed correctly.
+
+## Run the Example Project
+
+The repository includes runnable C# examples:
+
+```powershell
+dotnet run --project Examples\CSharp\CSharp.csproj -- --section WorkingWithSVGDocument
+```
+
+For the complete examples overview, see [`Examples/CSharp/README.md`](../../Examples/CSharp/README.md).
+
+## Troubleshooting
+
+- If NuGet cannot find the package, make sure `nuget.org` is enabled as a package source.
+- If restore fails in a corporate environment, check proxy settings or use an internal NuGet feed.
+- If the project builds but output contains evaluation limitations, apply a valid Aspose.SVG license. See [Licensing and Subscription - Aspose.SVG for .NET](licensing.md).
+- If you are upgrading old examples, check the target framework in the `.csproj` file and use a .NET SDK compatible with it.
+
+## Common Questions
+
+### How do I install Aspose.SVG for .NET in a C# project?
+
+Use `dotnet add package Aspose.SVG`, Visual Studio NuGet UI, or Package Manager Console.
+
+### Do I need to install Aspose.SVG separately on the machine?
+
+No. NuGet restores the package into your project. You do not need a separate MSI-style installation for normal .NET development.
+
+### Where can I find runnable C# examples?
+
+Use the examples in [`Examples/CSharp`](../../Examples/CSharp/README.md). They cover SVG documents, conversion, rendering, vectorization, styles, fonts, colors, transformations, Builder API, and licensing.
