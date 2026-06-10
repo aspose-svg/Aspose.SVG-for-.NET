@@ -1,54 +1,79 @@
-# Convert SVG to PDF in .NET
+# Convert SVG to PDF in C#
 
-Converting SVG documents to other formats is one of the key features of the Aspose.SVG API for .NET, allowing developers to programmatically convert SVG files to PDF, SVGZ, and popular raster image formats. The API provides precise control over rendering parameters, output quality, and document settings, making it a robust solution for converting, rendering, and automating SVG in professional .NET applications.
+**Aspose.SVG for .NET** converts SVG documents to PDF for reports, diagrams, print workflows, archiving, and document exchange. The conversion engine renders SVG content to PDF and provides save options for page setup, background color, resolution, and image quality.
 
-## Convert SVG to PDF Using Aspose.SVG for .NET
+Use this guide when you need to convert SVG files to PDF programmatically in a .NET application.
 
-Converting SVG to PDF is a common requirement for generating print‑ready documents, technical diagrams, and shareable reports. [**Aspose.SVG for .NET**](https://products.aspose.com/svg/net/) provides a reliable rendering engine that preserves vector quality, layout accuracy, and typography when exporting SVG content to PDF.
+## Product Resources
 
-### Why Convert SVG to PDF
+- [Aspose.SVG for .NET Documentation](https://docs.aspose.com/svg/net/)
+- [Aspose.SVG for .NET API Reference](https://reference.aspose.com/svg/net/)
+- [Convert SVG to PDF](https://docs.aspose.com/svg/net/convert-svg-to-pdf/)
+- [Convert SVG Files](https://docs.aspose.com/svg/net/convert-svg/)
+- [PdfSaveOptions API Reference](https://reference.aspose.com/svg/net/aspose.svg.saving/pdfsaveoptions/)
+- [Examples: ConvertRenderMergeSvg](../../Examples/CSharp/ConvertRenderMergeSvg/README.md)
 
-* Produce print‑ready vector documents.
-* Share graphics in a universally supported format.
-* Preserve resolution‑independent quality.
-* Generate reports and documentation programmatically.
+## Convert SVG to PDF
 
-### Basic SVG to PDF Conversion Example
+Use `Converter.ConvertSVG()` with `PdfSaveOptions` for a straightforward conversion.
+
+```csharp
+using Aspose.Svg.Converters;
+using Aspose.Svg.Saving;
+
+Converter.ConvertSVG("input.svg", new PdfSaveOptions(), "output.pdf");
+```
+
+## Convert SVGDocument to PDF
+
+Load an `SVGDocument` when you need to inspect or modify the SVG before conversion.
 
 ```csharp
 using Aspose.Svg;
-using Aspose.Svg.Rendering;
-using Aspose.Svg.Rendering.Pdf;
+using Aspose.Svg.Converters;
+using Aspose.Svg.Saving;
 
 using (var document = new SVGDocument("input.svg"))
 {
-    var options = new PdfRenderingOptions();
-
-    using (var device = new PdfDevice(options, "output.pdf"))
-    {
-        document.RenderTo(device);
-    }
+    var options = new PdfSaveOptions();
+    Converter.ConvertSVG(document, options, "output.pdf");
 }
 ```
 
-### Customizing PDF Output
+## Customize PDF Output
 
-You can fine‑tune the output using `PdfRenderingOptions`:
+Use `PdfSaveOptions` to configure PDF conversion settings such as page setup, background color, and rendering behavior.
 
-* Page size and margins
-* Background color
-* DPI and resolution
-* Font embedding and text rendering
+```csharp
+using Aspose.Svg.Converters;
+using Aspose.Svg.Saving;
+using System.Drawing;
 
-This makes Aspose.SVG suitable for high‑quality PDF generation from SVG sources in enterprise .NET applications.
+var options = new PdfSaveOptions
+{
+    BackgroundColor = Color.White
+};
 
-## See Also
+Converter.ConvertSVG("input.svg", options, "output.pdf");
+```
 
-- [**Official Documentation**](https://docs.aspose.com/svg/net/convert-svg/)
-Detailed guides and advanced scenarios for working with SVG documents in .NET.
-- [**API Reference**](https://reference.aspose.com/svg/net/aspose.svg.converters/)
-Explore the full API interface, classes, methods, and configuration options in the official reference.
-- [**Online SVG Converter**](https://products.aspose.app/svg/conversion)
-Try SVG conversion online without writing code using the Aspose web application.
-- [**GitHub Repository Examples**](https://github.com/aspose-svg/Aspose.SVG-for-.NET/tree/master/Examples)
-This repository contains ready-to-use code examples and sample data files that demonstrate SVG conversion, rendering, and manipulation with Aspose.SVG for .NET. Use these examples as a starting point or reference when integrating SVG processing into your own applications.
+## When to Use SVG to PDF Conversion
+
+- Generate printable documents from SVG diagrams.
+- Create PDF output from SVG-based technical graphics.
+- Package SVG-based reports into a widely supported document format.
+- Convert multiple SVG assets into PDF output for document workflows.
+
+## Common Questions
+
+### Can Aspose.SVG convert SVG to PDF?
+
+Yes. Use `Converter.ConvertSVG()` with `PdfSaveOptions` to convert an SVG file or an `SVGDocument` instance to PDF.
+
+### Can I convert SVG to PDF after editing it?
+
+Yes. Load the SVG as `SVGDocument`, update the DOM, and pass the document to `Converter.ConvertSVG()`.
+
+### Which PDF conversion options can I configure?
+
+Use `PdfSaveOptions` to configure output behavior such as page setup, background color, resolution, CSS handling, document information, encryption, and JPEG image quality.

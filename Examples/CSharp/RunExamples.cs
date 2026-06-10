@@ -1,5 +1,6 @@
 using Aspose.Svg;
 using CSharp.ConvertRenderMergeSvg;
+using CSharp.GettingStarted;
 using CSharp.ImageAndTextVectorization;
 using CSharp.SvgFiltersAndGradients;
 using CSharp.SvgStylesAndFontsManagement;
@@ -9,6 +10,7 @@ using CSharp.WorkingWithSvgColors;
 using CSharp.WorkingWithSVGDocument;
 using System;
 using System.IO;
+
 
 namespace CSharp
 {
@@ -93,7 +95,7 @@ namespace CSharp
             switch (section.Trim())
             {
                 case "GettingStarted":
-                    RunGettingStartedSection();
+                    GettingStartedExamples.RunAll();
                     return true;
 
                 case "ConvertRenderMergeSvg":
@@ -133,17 +135,6 @@ namespace CSharp
                     Console.WriteLine("Available sections: GettingStarted, ConvertRenderMergeSvg, ImageAndTextVectorization, SvgFiltersAndGradients, SvgStylesAndFontsManagement, SvgTransformations, UsingSvgBuilder, WorkingWithSvgColors, WorkingWithSVGDocument");
                     return true;
             }
-        }
-
-        private static void RunGettingStartedSection()
-        {
-            Console.WriteLine("GettingStarted examples are license setup examples.");
-            Console.WriteLine("Run them one by one after adding a valid Aspose.SVG license file or metered keys.");
-            Console.WriteLine("Available methods:");
-            Console.WriteLine("- LoadLicense.LoadLicenseFromFile()");
-            Console.WriteLine("- LoadLicense.LoadLicenseFromStream()");
-            Console.WriteLine("- LoadLicense.ApplyLicenseUsingEmbeddedResource()");
-            Console.WriteLine("- LoadLicense.ApplyMeteredLicense()");
         }
 
         private static void Finish()

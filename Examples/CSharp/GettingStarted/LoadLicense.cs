@@ -1,77 +1,109 @@
-﻿using Aspose.Svg;
+using Aspose.Svg;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace CSharp.GettingStarted
 {
     public class LoadLicense
     {
-        
+        private const string LicenseFileName = "Aspose.SVG.lic";
+        private const string PublicKeyVariable = "ASPOSE_SVG_METERED_PUBLIC_KEY";
+        private const string PrivateKeyVariable = "ASPOSE_SVG_METERED_PRIVATE_KEY";
 
         public static void LoadLicenseFromFile()
         {
-            //ExStart: LoadLicenseFromFile
-            // The path to the documents directory.
-            string dataDir = RunExamples.GetDataDir_Data();
+            // Apply an Aspose.SVG for .NET license from a file in C#.
+            // Put Aspose.SVG.lic into Examples/Data/ before running this example.
+            string licensePath = GetLicenseFilePath();
+            if (!File.Exists(licensePath))
+            {
+                PrintMissingLicenseFileMessage(licensePath);
+                return;
+            }
 
-            string fileName = dataDir + "Aspose.SVG.lic.Lic";
+            var license = new License();
+            license.SetLicense(licensePath);
 
-            License svgLicense = new License();
-
-            svgLicense.SetLicense(fileName);
-            //ExEnd: LoadLicenseFromFile
+            Console.WriteLine($"Aspose.SVG license loaded from file: {licensePath}");
         }
 
         public static void LoadLicenseFromStream()
         {
-            //ExStart: LoadLicenseFromStream
-            string dataDir = RunExamples.GetDataDir_Data();
-            // Initialize license object
-            License svgLicense = new License();
-            // Load license in FileStream
-            FileStream myStream = new FileStream("Aspose.SVG.lic", FileMode.Open);
-            // Set license
-            svgLicense.SetLicense(myStream);
-            //ExEnd: LoadLicenseFromStream
-        }
+            // Apply an Aspose.SVG for .NET license from a FileStream in C#.
+            // This pattern is useful when your application stores the license outside the default probing path.
+            string licensePath = GetLicenseFilePath();
+            if (!File.Exists(licensePath))
+            {
+                PrintMissingLicenseFileMessage(licensePath);
+                return;
+            }
 
+            var license = new License();
+            using (var stream = new FileStream(licensePath, FileMode.Open, FileAccess.Read))
+            {
+                license.SetLicense(stream);
+            }
+
+            Console.WriteLine($"Aspose.SVG license loaded from stream: {licensePath}");
+        }
 
         public static void ApplyLicenseUsingEmbeddedResource()
         {
-            //ExStart: ApplyLicenseUsingEmbeddedResource
-            
-            License svgLicense = new License();
+            // Apply an Aspose.SVG for .NET license embedded as an assembly resource.
+            // Set the license file Build Action to Embedded Resource and pass the full resource name to SetLicense().
+            string resourceName = Assembly.GetExecutingAssembly()
+                .GetManifestResourceNames()
+                .FirstOrDefault(name => name.EndsWith(LicenseFileName, StringComparison.OrdinalIgnoreCase));
 
-            // Pass the name of the embedded license file
-            svgLicense.SetLicense("Aspose.SVG.lic");
-            //ExEnd: ApplyLicenseUsingEmbeddedResource
+            if (string.IsNullOrEmpty(resourceName))
+            {
+                Console.WriteLine("Embedded license resource was not found.");
+                Console.WriteLine("Add Aspose.SVG.lic to the project, set Build Action to Embedded Resource, and run this example again.");
+                return;
+            }
+
+            var license = new License();
+            license.SetLicense(resourceName);
+
+            Console.WriteLine($"Aspose.SVG license loaded from embedded resource: {resourceName}");
         }
 
         public static void ApplyMeteredLicense()
         {
-            //ExStart: ApplyMeteredLicense
+            // Apply an Aspose.SVG metered license in C#.
+            // Store metered keys in environment variables instead of hard-coding credentials in source code.
+            string publicKey = Environment.GetEnvironmentVariable(PublicKeyVariable);
+            string privateKey = Environment.GetEnvironmentVariable(PrivateKeyVariable);
 
-            // Create an instance of CAD Metered class
-           Metered metered = new Metered();
+            if (string.IsNullOrWhiteSpace(publicKey) || string.IsNullOrWhiteSpace(privateKey))
+            {
+                Console.WriteLine("Metered license keys were not found.");
+                Console.WriteLine($"Set {PublicKeyVariable} and {PrivateKeyVariable} environment variables before running this example.");
+                return;
+            }
 
-            // Access the setMeteredKey property and pass public and private keys as parameters
-            metered.SetMeteredKey("*****", "*****");
+            var metered = new Metered();
+            decimal amountBefore = Metered.GetConsumptionQuantity();
 
-            // Get metered data amount before calling API
-            decimal amountbefore = Metered.GetConsumptionQuantity();
+            metered.SetMeteredKey(publicKey, privateKey);
 
-            // Display information
-            Console.WriteLine("Amount Consumed Before: " + amountbefore.ToString());
-            // Get metered data amount After calling API
-            decimal amountafter = Metered.GetConsumptionQuantity();
+            decimal amountAfter = Metered.GetConsumptionQuantity();
+            Console.WriteLine($"Metered consumption before API call: {amountBefore}");
+            Console.WriteLine($"Metered consumption after API call: {amountAfter}");
+        }
 
-            // Display information
-            Console.WriteLine("Amount Consumed After: " + amountafter.ToString());
-            //ExEnd: ApplyMeteredLicense
+        private static string GetLicenseFilePath()
+        {
+            return Path.Combine(RunExamples.GetDataDir_Data(), LicenseFileName);
+        }
+
+        private static void PrintMissingLicenseFileMessage(string licensePath)
+        {
+            Console.WriteLine("Aspose.SVG license file was not found.");
+            Console.WriteLine($"Expected path: {licensePath}");
+            Console.WriteLine("The example was skipped. Add a valid Aspose.SVG.lic file to run it.");
         }
     }
 }

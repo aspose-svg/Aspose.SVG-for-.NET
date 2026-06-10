@@ -1,17 +1,21 @@
-# Convert SVG to SVGZ in .NET
+# Convert SVG to SVGZ in C#
 
-## Convert SVG to Compressed SVGZ Format
+SVGZ is a GZIP-compressed SVG format. **Aspose.SVG for .NET** can save SVG as SVGZ directly, without requiring manual compression code.
 
-SVGZ is a GZIP‑compressed version of SVG that significantly reduces file size while preserving full vector quality. [**Aspose.SVG for .NET**](https://products.aspose.com/svg/net/) provides native support for saving SVG documents in SVGZ format without manual compression.
+Use SVGZ when you want smaller SVG files for storage, delivery, or web publishing while keeping the content as vector graphics.
 
-### Why Use SVGZ
+## Product Resources
 
-* Reduce file size for web delivery
-* Improve loading performance
-* Preserve full SVG compatibility
-* Optimize storage and bandwidth usage
+- [Aspose.SVG for .NET Documentation](https://docs.aspose.com/svg/net/)
+- [Aspose.SVG for .NET API Reference](https://reference.aspose.com/svg/net/)
+- [Save SVG File](https://docs.aspose.com/svg/net/save-svg-file/)
+- [Supported File Formats](../getting-started/supported-file-formats.md)
+- [Examples: ConvertRenderMergeSvg](../../Examples/CSharp/ConvertRenderMergeSvg/README.md)
+- [Examples: WorkingWithSVGDocument](../../Examples/CSharp/WorkingWithSVGDocument/README.md)
 
-### SVG to SVGZ Conversion Example
+## Convert SVG to SVGZ
+
+Load the SVG file and save it with `SVGSaveFormat.SVGZ`.
 
 ```csharp
 using Aspose.Svg;
@@ -19,30 +23,57 @@ using Aspose.Svg.Saving;
 
 using (var document = new SVGDocument("input.svg"))
 {
-    var options = new SVGSaveOptions
-    {
-        SaveFormat = SVGSaveFormat.SVGZ
-    };
-
-    document.Save("output.svgz", options);
+    document.Save("output.svgz", SVGSaveFormat.SVGZ);
 }
 ```
 
-### Notes
+## Why Use SVGZ?
 
-* No additional compression libraries are required.
-* SVGZ files can be loaded and processed the same way as regular SVG files.
-* The output fully complies with the SVG specification.
+- Smaller file size than plain SVG.
+- Same vector quality as SVG.
+- Useful for web delivery and storage.
+- Can be loaded and processed like regular SVG by tools that support SVGZ.
 
-This makes SVGZ an excellent choice for delivering complex vector graphics efficiently in .NET applications.
+## Load SVGZ
 
-## See Also
+An SVGZ file can be loaded through `SVGDocument` when you need to inspect, edit, or convert it.
 
-- [**Official Documentation**](https://docs.aspose.com/svg/net/convert-svg/)
-Detailed guides and advanced scenarios for working with SVG documents in .NET.
-- [**API Reference**](https://reference.aspose.com/svg/net/aspose.svg.converters/)
-Explore the full API interface, classes, methods, and configuration options in the official reference.
-- [**Online SVG Converter**](https://products.aspose.app/svg/conversion)
-Try SVG conversion online without writing code using the Aspose web application.
-- [**GitHub Repository Examples**](https://github.com/aspose-svg/Aspose.SVG-for-.NET/tree/master/Examples)
-This repository contains ready-to-use code examples and sample data files that demonstrate SVG conversion, rendering, and manipulation with Aspose.SVG for .NET. Use these examples as a starting point or reference when integrating SVG processing into your own applications.
+```csharp
+using Aspose.Svg;
+using Aspose.Svg.Saving;
+
+using (var document = new SVGDocument("input.svgz"))
+{
+    document.Save("expanded-output.svg", SVGSaveFormat.SVG);
+}
+```
+
+## Convert SVGZ to PDF or PNG
+
+After loading SVGZ with `SVGDocument`, use the same conversion APIs that are used for regular SVG documents.
+
+```csharp
+using Aspose.Svg;
+using Aspose.Svg.Converters;
+using Aspose.Svg.Saving;
+
+using (var document = new SVGDocument("input.svgz"))
+{
+    Converter.ConvertSVG(document, new PdfSaveOptions(), "output.pdf");
+    Converter.ConvertSVG(document, new ImageSaveOptions(), "output.png");
+}
+```
+
+## Common Questions
+
+### Is SVGZ different from SVG?
+
+SVGZ contains SVG markup compressed with GZIP. It preserves the vector content but stores it in a compressed file.
+
+### Do I need a separate compression library?
+
+No. Aspose.SVG can save SVGZ directly.
+
+### Can I convert SVGZ to PDF or PNG?
+
+Yes. Load SVGZ with `SVGDocument` and use `Converter.ConvertSVG()` with `PdfSaveOptions` or `ImageSaveOptions`.
