@@ -1,5 +1,11 @@
 using Aspose.Svg;
-using CSharp.LoadSaveConvert;
+using CSharp.ConvertRenderMergeSvg;
+using CSharp.ImageAndTextVectorization;
+using CSharp.SvgFiltersAndGradients;
+using CSharp.SvgStylesAndFontsManagement;
+using CSharp.SvgTransformations;
+using CSharp.UsingSvgBuilder;
+using CSharp.WorkingWithSvgColors;
 using CSharp.WorkingWithSVGDocument;
 using System;
 using System.IO;
@@ -27,24 +33,32 @@ namespace CSharp
             //LoadLicense.ApplyMeteredLicense();
             #endregion
 
-            #region LoadSaveConvert
-            //ConvertSVGFilesUsingRenderer.Run();
-            //ConvertSVGToImage.ConvertSVGToBMP();
-            //ConvertSVGToImage.ConvertSVGToGIF();
-            //ConvertSVGToImage.ConvertSVGToJPEG();
-            //ConvertSVGToImage.ConvertSVGToPNG();
-            //ConvertSVGToImage.ConvertSVGToTIFF();
-            //ConvertSVGToPDF.Run();
-            //ConvertSVGToXPS.Run();
-            //CreateEmptySVGDocument.Run();
-            //CreateSVGDocumentFromContent.Run();
-            //LoadSVGDocumentAsync.Run();
-            //LoadSVGDocumentFromFile.Run();
-            //LoadSVGDocumentFromUrl.Run();
-            //RenderingOptions.Run();
-            //SaveSVGDocument.Run();
-            //SupportForHtmlContentInSVG.Run();
-            //VectorizeText.Run();
+            #region ConvertRenderMergeSvg
+            //ConvertRenderMergeSvgExamples.RunAll();
+            #endregion
+
+            #region ImageAndTextVectorization
+            //ImageAndTextVectorizationExamples.RunAll();
+            #endregion
+
+            #region SvgFiltersAndGradients
+            //SvgFiltersAndGradientsExamples.RunAll();
+            #endregion
+
+            #region SvgStylesAndFontsManagement
+            //SvgStylesAndFontsManagementExamples.RunAll();
+            #endregion
+
+            #region SvgTransformations
+            //SvgTransformationsExamples.RunAll();
+            #endregion
+
+            #region UsingSvgBuilder
+            //UsingSvgBuilderExamples.RunAll();
+            #endregion
+
+            #region WorkingWithSvgColors
+            //WorkingWithSvgColorsExamples.RunAll();
             #endregion
 
             #region WorkingWithSVGDocument
@@ -82,8 +96,32 @@ namespace CSharp
                     RunGettingStartedSection();
                     return true;
 
-                case "LoadSaveConvert":
-                    RunLoadSaveConvertSection();
+                case "ConvertRenderMergeSvg":
+                    ConvertRenderMergeSvgExamples.RunAll();
+                    return true;
+
+                case "ImageAndTextVectorization":
+                    ImageAndTextVectorizationExamples.RunAll();
+                    return true;
+
+                case "SvgFiltersAndGradients":
+                    SvgFiltersAndGradientsExamples.RunAll();
+                    return true;
+
+                case "SvgStylesAndFontsManagement":
+                    SvgStylesAndFontsManagementExamples.RunAll();
+                    return true;
+
+                case "SvgTransformations":
+                    SvgTransformationsExamples.RunAll();
+                    return true;
+
+                case "UsingSvgBuilder":
+                    UsingSvgBuilderExamples.RunAll();
+                    return true;
+
+                case "WorkingWithSvgColors":
+                    WorkingWithSvgColorsExamples.RunAll();
                     return true;
 
                 case "WorkingWithSVGDocument":
@@ -92,7 +130,7 @@ namespace CSharp
 
                 default:
                     Console.WriteLine($"Unknown section: {section}");
-                    Console.WriteLine("Available sections: GettingStarted, LoadSaveConvert, WorkingWithSVGDocument");
+                    Console.WriteLine("Available sections: GettingStarted, ConvertRenderMergeSvg, ImageAndTextVectorization, SvgFiltersAndGradients, SvgStylesAndFontsManagement, SvgTransformations, UsingSvgBuilder, WorkingWithSvgColors, WorkingWithSVGDocument");
                     return true;
             }
         }
@@ -106,30 +144,6 @@ namespace CSharp
             Console.WriteLine("- LoadLicense.LoadLicenseFromStream()");
             Console.WriteLine("- LoadLicense.ApplyLicenseUsingEmbeddedResource()");
             Console.WriteLine("- LoadLicense.ApplyMeteredLicense()");
-        }
-
-        private static void RunLoadSaveConvertSection()
-        {
-            Console.WriteLine("Running LoadSaveConvert examples...");
-
-            ConvertSVGFilesUsingRenderer.Run();
-            ConvertSVGToImage.ConvertSVGToBMP();
-            ConvertSVGToImage.ConvertSVGToGIF();
-            ConvertSVGToImage.ConvertSVGToJPEG();
-            ConvertSVGToImage.ConvertSVGToPNG();
-            ConvertSVGToImage.ConvertSVGToTIFF();
-            ConvertSVGToPDF.Run();
-            ConvertSVGToXPS.Run();
-            CreateEmptySVGDocument.Run();
-            CreateSVGDocumentFromContent.Run();
-            LoadSVGDocumentFromFile.Run();
-            RenderingOptions.Run();
-            SaveSVGDocument.Run();
-            SupportForHtmlContentInSVG.Run();
-            VectorizeText.Run();
-
-            Console.WriteLine("Skipped LoadSVGDocumentFromUrl and LoadSVGDocumentAsync because they still use an old external HTTP URL.");
-            Console.WriteLine("LoadSaveConvert examples finished.");
         }
 
         private static void Finish()
@@ -184,6 +198,54 @@ namespace CSharp
         public static String GetDataDir_OutputConvert()
         {
             var dir = Path.GetFullPath(Path.Combine(GetDataDir_Data(), "..\\output\\convert\\"));
+            Directory.CreateDirectory(dir);
+            return dir;
+        }
+
+        public static String GetDataDir_OutputVectorization()
+        {
+            // Output files for image and text vectorization examples are stored in Examples/output/vectorization/
+            var dir = Path.GetFullPath(Path.Combine(GetDataDir_Data(), "..\\output\\vectorization\\"));
+            Directory.CreateDirectory(dir);
+            return dir;
+        }
+
+        public static String GetDataDir_OutputFiltersAndGradients()
+        {
+            // Output files for SVG filters and gradients examples are stored in Examples/output/filters-gradients/
+            var dir = Path.GetFullPath(Path.Combine(GetDataDir_Data(), "..\\output\\filters-gradients\\"));
+            Directory.CreateDirectory(dir);
+            return dir;
+        }
+
+        public static String GetDataDir_OutputStylesAndFonts()
+        {
+            // Output files for SVG styles and fonts examples are stored in Examples/output/styles-fonts/
+            var dir = Path.GetFullPath(Path.Combine(GetDataDir_Data(), "..\\output\\styles-fonts\\"));
+            Directory.CreateDirectory(dir);
+            return dir;
+        }
+
+        public static String GetDataDir_OutputTransformations()
+        {
+            // Output files for SVG transformation examples are stored in Examples/output/transformations/
+            var dir = Path.GetFullPath(Path.Combine(GetDataDir_Data(), "..\\output\\transformations\\"));
+            Directory.CreateDirectory(dir);
+            return dir;
+        }
+
+        public static String GetDataDir_OutputBuilder()
+        {
+            // Output files for SVG Builder API examples are stored in Examples/output/builder/
+            var dir = Path.GetFullPath(Path.Combine(GetDataDir_Data(), "..\\output\\builder\\"));
+            Directory.CreateDirectory(dir);
+            return dir;
+        }
+
+        public static String GetDataDir_OutputColors()
+        {
+            // Output files for SVG color examples are stored in Examples/output/colors/
+            var dir = Path.GetFullPath(Path.Combine(GetDataDir_Data(), "..\\output\\colors\\"));
             Directory.CreateDirectory(dir);
             return dir;
         }

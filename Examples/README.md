@@ -1,40 +1,116 @@
-## Aspose.SVG for .NET Examples
+# Aspose.SVG for .NET Examples
 
-This repository contains C# examples for [Aspose.SVG for .NET](https://products.aspose.com/svg/net/) which will help you learn Aspose.SVG for .NET and write your own applications.
+This folder contains example projects and shared input files for **Aspose.SVG for .NET**.
 
-<p align="center">
-  <a title="Download Examples ZIP" href="https://github.com/aspose-svg/Aspose.SVG-for-.NET/archive/master.zip">
-	<img src="https://raw.github.com/AsposeExamples/java-examples-dashboard/master/images/downloadZip-Button-Large.png" />
-  </a>
-</p>
+The examples are designed to complement the product documentation and show practical C# scenarios: working with SVG documents, converting and rendering SVG, vectorization, filters, gradients, styles, fonts, transformations, Builder API usage, SVG colors, and photo effects.
 
-## How to Run the Examples
+## Product Resources
 
-### **Software Requirements**
+- [Aspose.SVG for .NET Documentation](https://docs.aspose.com/svg/net/)
+- [Aspose.SVG for .NET API Reference](https://reference.aspose.com/svg/net/)
+- [Aspose.SVG for .NET Product Page](https://products.aspose.com/svg/net/)
+- [Aspose.SVG for .NET NuGet Package](https://www.nuget.org/packages/Aspose.SVG/)
+- [Aspose.SVG Support Forum](https://forum.aspose.com/c/svg/28)
 
-Please make sure you meet the following requirements before downloading and running the examples.
+## Folder Structure
 
-1. Visual Studio 2010 or higher.
-1. NuGet Package Manager installed in Visual Studio. Make sure that the latest NuGet API version is installed in Visual Studio. For details on how to install NuGet package manager please check <https://docs.microsoft.com/en-gb/nuget/install-nuget-client-tools>.
-1. Go to `Tools->Options->NuGet Package Manager->Package Sources` and make sure that the option **nuget.org** is checked.
-1. Example project uses NuGet Automatic Package Restore feature, therefore, you should have an active internet connection. If you do not have an active internet connection on the machine where examples are to be executed please check [Installation](https://docs.aspose.com/svg/net/installation/) and manually add a reference to Aspose.SVG.dll in the example project.
+```text
+Examples/
+  CSharp/       C# example projects and section runners
+  Data/         Shared input files used by examples
+  output/       Generated files created when examples run
+```
 
-### **Download from GitHub**
+The main C# examples project is located here:
 
-All examples of Aspose.SVG for .NET are hosted on [GitHub](https://github.com/aspose-svg/Aspose.SVG-for-.NET).
+```text
+Examples/CSharp/CSharp.csproj
+```
 
-- You can either clone the repository using your favorite GitHub client or download the ZIP file from [here](https://github.com/aspose-svg/Aspose.SVG-for-.NET/archive/master.zip).
-- Extract the contents of ZIP file to any folder on your computer. All the examples are located in the **Examples** folder.
-- The solution files are compatible with Visual Studio 2010 SP1 and higher.
-- Open the solution file in Visual Studio and build the project.
-- On the first run, the dependencies will automatically be downloaded via NuGet.
-- **Data** folder at the root folder of **Examples** contains input files that CSharp examples used. It is mandatory that you download the **Data** folder along with the examples project.
-- Open RunExamples.cs file, all the examples are called from here.  Uncomment the examples you want to run from within the project.
+For C#-specific instructions and the full section list, see:
 
-For more details, see [How to Run the Examples](https://docs.aspose.com/svg/net/how-to-run-the-tests/). Please feel free to reach out using our Forums if you have any issues setting up or running the examples.
+```text
+Examples/CSharp/README.md
+```
 
-## **Contribute**
+## Requirements
 
-If you like to add or improve an example, we encourage you to contribute to the project. All examples and showcase projects in this repository are open source and can be freely used in your own applications.
+- .NET SDK compatible with the target framework used by the examples.
+- Visual Studio or another C# IDE.
+- NuGet package restore enabled.
+- The `Examples/Data/` folder, because many examples load shared input files from it.
 
-To contribute, you can fork the repository, edit the source code and create a pull request. We will review the changes and include them in the repository if found helpful.
+The Aspose.SVG package version is defined in the corresponding `.csproj` file.
+
+## Run C# Examples
+
+From the repository root, run a section by passing `--section`:
+
+```powershell
+dotnet run --project Examples\CSharp\CSharp.csproj -- --section WorkingWithSVGDocument
+```
+
+You can replace `WorkingWithSVGDocument` with another section name, for example:
+
+```powershell
+dotnet run --project Examples\CSharp\CSharp.csproj -- --section ConvertRenderMergeSvg
+dotnet run --project Examples\CSharp\CSharp.csproj -- --section SvgFiltersAndGradients
+dotnet run --project Examples\CSharp\CSharp.csproj -- --section UsingSvgBuilder
+```
+
+The central runner is:
+
+```text
+Examples/CSharp/RunExamples.cs
+```
+
+Visual Studio launch profiles are stored in:
+
+```text
+Examples/CSharp/Properties/launchSettings.json
+```
+
+## Available C# Sections
+
+- `GettingStarted` - license setup examples.
+- `WorkingWithSVGDocument` - create, load, edit, navigate, query, and save SVG documents.
+- `ConvertRenderMergeSvg` - convert, render, resize, and merge SVG output.
+- `ImageAndTextVectorization` - image vectorization, stencil creation, and text vectorization.
+- `SvgFiltersAndGradients` - SVG filter effects and gradients.
+- `SvgStylesAndFontsManagement` - SVG styles, CSS, text, custom fonts, and font troubleshooting.
+- `SvgTransformations` - rotate, translate, scale, skew, matrix transforms, and `viewBox`.
+- `UsingSvgBuilder` - create and edit SVG with the Aspose.SVG Builder API.
+- `WorkingWithSvgColors` - change SVG colors, backgrounds, and color code formats.
+- `PhotoEffects` - separate console app for SVG filter-based photo effects.
+
+## Input and Output Files
+
+Input assets are stored centrally:
+
+```text
+Examples/Data/
+```
+
+Generated files are written under:
+
+```text
+Examples/output/
+```
+
+Output folders are created automatically when examples run.
+
+## Download Examples
+
+You can clone the repository or download it as a ZIP archive:
+
+```text
+https://github.com/aspose-svg/Aspose.SVG-for-.NET
+```
+
+Make sure the `Examples/Data/` folder is downloaded together with the source code.
+
+## Contribute
+
+Contributions are welcome. You can fork the repository, improve or add examples, and open a pull request.
+
+When adding examples, keep them focused, runnable, and documented. Prefer shared input files in `Examples/Data/` and write generated results to `Examples/output/`.

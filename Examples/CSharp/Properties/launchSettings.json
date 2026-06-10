@@ -5,9 +5,39 @@
       "commandLineArgs": "--section GettingStarted",
       "workingDirectory": "$(ProjectDir)"
     },
-    "LoadSaveConvert": {
+    "ConvertRenderMergeSvg": {
       "commandName": "Project",
-      "commandLineArgs": "--section LoadSaveConvert",
+      "commandLineArgs": "--section ConvertRenderMergeSvg",
+      "workingDirectory": "$(ProjectDir)"
+    },
+    "ImageAndTextVectorization": {
+      "commandName": "Project",
+      "commandLineArgs": "--section ImageAndTextVectorization",
+      "workingDirectory": "$(ProjectDir)"
+    },
+    "SvgFiltersAndGradients": {
+      "commandName": "Project",
+      "commandLineArgs": "--section SvgFiltersAndGradients",
+      "workingDirectory": "$(ProjectDir)"
+    },
+    "SvgStylesAndFontsManagement": {
+      "commandName": "Project",
+      "commandLineArgs": "--section SvgStylesAndFontsManagement",
+      "workingDirectory": "$(ProjectDir)"
+    },
+    "SvgTransformations": {
+      "commandName": "Project",
+      "commandLineArgs": "--section SvgTransformations",
+      "workingDirectory": "$(ProjectDir)"
+    },
+    "UsingSvgBuilder": {
+      "commandName": "Project",
+      "commandLineArgs": "--section UsingSvgBuilder",
+      "workingDirectory": "$(ProjectDir)"
+    },
+    "WorkingWithSvgColors": {
+      "commandName": "Project",
+      "commandLineArgs": "--section WorkingWithSvgColors",
       "workingDirectory": "$(ProjectDir)"
     },
     "WorkingWithSVGDocument": {
